@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>SmokingPuddle58&#39;s Blog</title>
+        <link>https://smokingpuddle58.github.io/blog/</link>
+        <description>Recent content on SmokingPuddle58&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My own feeling about Wayland in daily use</title>
+        <link>https://smokingpuddle58.github.io/blog/p/bad-linux/</link>
+        <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/p/bad-linux/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; Wayland has really improved a lot from 6 months before, especially on KDE, but still it&amp;rsquo;s not as stable as X
+so I switched back to X 😭.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OK before that let me briefly introduce Wayland.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Wayland is developed by a group of volunteers initially led by Kristian Høgsberg as
+a free and open-source community-driven project &lt;strong&gt;with the aim of replacing the X Window
+System&lt;/strong&gt; with a modern, secure, and simpler windowing system for Linux and
+other Unix-like operating systems. (Wikipedia, 2023) (Yep I still remember in-text citation from LANG courses)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The first time I use Wayland was when I first tried linux on my PC in Fedora, and the distro used Gnome as the default desktop environment.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>First Blog</title>
+        <link>https://smokingpuddle58.github.io/blog/p/hello-world/</link>
+        <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/p/hello-world/</guid>
+        <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;This is my first blog.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>About</title>
+        <link>https://smokingpuddle58.github.io/blog/about/about/</link>
+        <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/about/about/</guid>
+        <description>&lt;h1 id=&#34;about-me-smokingpuddle58&#34;&gt;About me: SmokingPuddle58&lt;/h1&gt;
+&lt;h2 id=&#34;some-background-about-me&#34;&gt;Some background about me&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Junior Student at HKUST&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MATH (CS Track) + AI&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arch Linux user and &lt;del&gt;enjoyer&lt;/del&gt; (If my system runs well)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using Vim (Actually NeoVim) as my main editor (Still memorizing shortcuts) (Not that important to mention)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;why-your-name-smokingpuddle58&#34;&gt;Why your name SmokingPuddle58?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The name is generated by Xbox as I play Minecraft PE (Now it&amp;rsquo;s called Minecraft Bedrock) &lt;del&gt;(Yup, I don&amp;rsquo;t have Java edition for now)&lt;/del&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Feel free to contact him by using Discord (Immediate reply if I&amp;rsquo;m online (Probably)), or by using e-mail.&lt;/p&gt;
+&lt;p&gt;Email:&lt;/p&gt;
+&lt;p&gt;Decode the base64 string &lt;code&gt;amFuemhhbmcwNDE0QG91dGxvb2suY29t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you are using *NIX OS (MacOS/Linux), you may also run the following code to get my e-mail.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;echo amFuemhhbmcwNDE0QG91dGxvb2suY29t | base64 -d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://smokingpuddle58.github.io/blog/archives/</link>
+        <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://smokingpuddle58.github.io/blog/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,140 @@
+body 
+{
+    background-color: beige;
+    font-family: "Jetbrain", "Arial";
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+.avatar_img
+{
+    border: 4px solid transparent;
+    border-radius: 100%;
+    padding: 2px 2px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+.avatar_img:hover
+{
+    border: 4px solid black;
+    border-radius: 100%;
+    padding: 2px 2px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.onNight .avatar_img
+{
+    border: 4px solid transparent;
+    border-radius: 100%;
+    padding: 2px 2px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+.onNight .avatar_img:hover
+{
+    border: 4px solid white;
+    border-radius: 100%;
+    padding: 2px 2px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+        box-shadow: 0 6px 8px 0 rgba(149,165,166,0.20);
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.70);
+}
+
+/* Define menu button shape and behaviour */
+.menu_button
+{
+    border: 2px solid transparent;
+    color: black;
+    padding: 10px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Jetbrain;
+    border-radius: 36px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    font-weight: bold;
+}
+
+.menu_button:hover 
+{
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: 2px solid black;
+}
+
+/* Adjusting color modes */
+.onNight
+{
+    background-color: #232627;  
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+/* Define the button behaviour under the night mode */
+.onNight .menu_button
+{
+    color: white; 
+}
+
+.onNight .menu_button:hover
+{
+    border: 2px solid white;
+    box-shadow: 0 6px 8px 0 rgba(149,165,166,0.20);
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.70);
+}
+
+.menu_button .icon_svg
+{
+    stroke: black;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.onNight .menu_button .icon_svg
+{
+    stroke: white;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.onNight .mainPage
+{
+    color: white;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+
+/* To remove every hyperlink color change */
+a, a:hover, a:visited, a:active 
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* To keep buttons on the right */
+.right
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* General Behaviour for buttons */
+button
+{
+    background-color: transparent;
+}
+
+.mainPage
+{
+    
+}
+
+@font-face 
+{
+font-family: "Jetbrain";
+src: url("image/JetBrainsMono-Regular.woff2");
+}

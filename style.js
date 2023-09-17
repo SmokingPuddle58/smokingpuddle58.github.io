@@ -6,6 +6,5 @@ function toggleDark() {
     }
     if (!isOn) {
         document.cookie = "isDark=false";
-        return;
     }
 }

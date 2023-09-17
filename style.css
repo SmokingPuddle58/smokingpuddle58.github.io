@@ -133,6 +133,11 @@ button
     
 }
 
+.mainMargin0
+{
+    margin: 30px 180px
+}
+
 @font-face 
 {
 font-family: "Jetbrain";

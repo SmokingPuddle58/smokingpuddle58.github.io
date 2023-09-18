@@ -63,7 +63,7 @@ body {
 
 /* Adjusting color modes */
 .onNight {
-    background-color: #232627;
+    background-color: #373e40;
     -webkit-transition-duration: 0.2s; /* Safari */
     transition-duration: 0.2s;
 }
@@ -114,12 +114,6 @@ button {
     background-color: transparent;
 }
 
-.mainOutput {
-    width: auto;
-    height: auto;
-    margin: 0 auto;
-}
-
 @font-face {
     font-family: "Jetbrain";
     src: url("image/JetBrainsMono-Regular.woff2");
@@ -155,20 +149,87 @@ button {
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.70);
 }
 
-.contact_logo .icon_svg {
+.alignCenter_logo .icon_svg {
     stroke: black;
     -webkit-transition-duration: 0.2s; /* Safari */
     transition-duration: 0.2s;
 }
 
-.onNight .contact_logo .icon_svg {
+.onNight .alignCenter_logo .icon_svg {
     stroke: white;
     -webkit-transition-duration: 0.2s; /* Safari */
     transition-duration: 0.2s;
 }
 
-.centerIt
-{
-    width: 0;
-    margin: 0 auto;
+.copyright_text {
+    float: left;
+    font-size: 14px
+}
+
+.alignCenter_logo {
+    float: right;
+    border: 1px solid transparent;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    border-radius: 3px;
+}
+
+.alignCenter_logo:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.onNight .alignCenter_logo:hover {
+    border: 1px solid transparent;
+}
+
+section {
+    display: none;
+}
+
+section:target {
+    display: block;
+}
+
+
+.intro {
+    text-align: left;
+    width: 80%;
+    padding: 30px;
+    margin: 10px auto 0 auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.onNight .intro {
+    color: white;
+    border: 2px solid white;
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.5), 0 -17px 50px 0 rgba(232, 220, 202, 0.19);
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    text-align: center;
+}
+
+.onNight .footer {
+    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.5), 0 -17px 50px 0 rgba(0, 0, 0, 0.19);
+
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    color: white;
 }

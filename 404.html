@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script src="style.js"></script>
     <title>404</title>
 </head>
 <body>
@@ -10,24 +11,45 @@
     if (document.cookie === "isDark=true") {
         document.body.classList.add("onNight");
     }
+    window.onload = function () {
+        changeEmoji();
+        changeSentence();
+    }
 
 </script>
-<script src="style.css"></script>
+
 <main>
+
     <div class="mainPage">
-        <h1 style="text-align: center; font-size: xxx-large">4😭4</h1>
+        <h1 style="text-align: center; font-size: xxx-large" id="fourOhFour"></h1>
         <p style="text-align: center; font-size: xx-large">Page does not exist!</p>
         <p style="text-align: center; font-size: large">
             If there should be a page here, please contact SmokingPuddle58. Thanks.
         </p>
 
-        <div class="intro">
-            <h3 style="text-align: center; font-size: x-large">
-                「希望，本無所謂有，也無所謂無，這就像地上的路，其實地上本沒有路，人走多了，便成了路。」
+        <div class="intro" style="font-style: normal">
+            <h3 style="text-align: center; font-size: x-large" id="sentence">
             </h3>
-            <h3 style="text-align: right; font-size: x-large">
-                ——魯迅
+            <h3 style="text-align: right; font-size: x-large" id="author">
             </h3>
+            <p>
+            </p>
+            <button class="menu_button"
+                    style="margin: 0;   position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%);   transform: translate(-50%, -50%);"
+                    onclick="changeSentence()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-replace icon_svg" width="16"
+                     height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M3 3m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/>
+                    <path d="M15 15m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/>
+                    <path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3"/>
+                    <path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3"/>
+                </svg>
+                Change a quote
+            </button>
+            <br>
+
         </div>
         <br><br><br>
 
@@ -35,7 +57,7 @@
             <button class="menu_button"
                     style="margin: 0;   position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%);   transform: translate(-50%, -50%);">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home icon_svg"
-                     width="16" height="16" viewBox="0 0 24 24" stroke-width="2.5" stroke="#2c3e50" fill="none"
+                     width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none"
                      stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 12l-2 0l9 -9l9 9l-2 0"/>
@@ -46,6 +68,10 @@
             </button>
         </a>
 
+    </div>
+    <div class="copyright_text">
+        <a href="https://github.com/lukePeavey/quotable/blob/master/LICENCE.md">Quotes are licensed under the MIT
+            License</a>
     </div>
 </main>
 </body>

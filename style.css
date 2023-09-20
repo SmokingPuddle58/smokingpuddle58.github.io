@@ -1,49 +1,76 @@
 body {
     background-color: beige;
-    font-family: "Jetbrain", serif;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+    font-family: "Jetbrain", "NotoColor", serif;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    display: grid;
+    margin-bottom: 50px;
+    position: relative
+}
+
+button {
+    background-color: transparent
+}
+
+@font-face {
+    font-family: "Jetbrain";
+    src: url(file/JetBrainsMono-Regular.woff2)
+}
+
+@font-face {
+    font-family: 'NotoColor';
+    src: url(file/NotoColorEmoji-Regular.ttf)
+}
+
+a, a:active, a:hover, a:visited {
+    color: inherit;
+    text-decoration: none
+}
+
+section {
+    display: none
+}
+
+section:target {
+    display: block
+}
+
+.avatar_img, .onNight {
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
+}
+
+.onNight {
+    background-color: #2b2d30
 }
 
 .avatar_img {
     border: 4px solid transparent;
     border-radius: 100%;
-    padding: 2px 2px;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+    padding: 2px
 }
 
-.avatar_img:hover {
-    border: 4px solid black;
-    border-radius: 100%;
-    padding: 2px 2px;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.avatar_img:hover, .menu_button:hover {
+    border: 4px solid #1e90ff;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 
-.onNight .avatar_img {
-    border: 4px solid transparent;
-    border-radius: 100%;
-    padding: 2px 2px;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+.menu_button:hover {
+    border: 2px solid #000
 }
 
-.onNight .avatar_img:hover {
-    border: 4px solid white;
-    border-radius: 100%;
-    padding: 2px 2px;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-    box-shadow: 0 6px 8px 0 rgba(149, 165, 166, 0.20);
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.70);
+.onNight .avatar_img:hover, .onNight .menu_button:hover {
+    border: 4px solid orange;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .7)
 }
 
-/* Define menu button shape and behaviour */
+.onNight .menu_button:hover {
+    border: 2px solid #fff
+}
+
 .menu_button {
     border: 2px solid transparent;
-    color: black;
+    color: #000;
     padding: 10px 21px;
     text-align: center;
     text-decoration: none;
@@ -51,185 +78,130 @@ body {
     font-size: 16px;
     font-family: Jetbrain, serif;
     border-radius: 36px;
-    -webkit-transition-duration: 0.15s; /* Safari */
-    transition-duration: 0.15s;
-    font-weight: bold;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    font-weight: 700
 }
 
-.menu_button:hover {
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    border: 2px solid black;
-}
-
-/* Adjusting color modes */
-.onNight {
-    background-color: #373e40;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-}
-
-/* Define the button behaviour under the night mode */
 .onNight .menu_button {
-    color: white;
+    color: #fff
 }
 
-.onNight .menu_button:hover {
-    border: 2px solid white;
-    box-shadow: 0 6px 8px 0 rgba(149, 165, 166, 0.20);
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.70);
+.menu_button .icon_svg, .onNight .mainPage {
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
 }
 
 .menu_button .icon_svg {
-    stroke: black;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+    stroke: #000
 }
 
-.onNight .menu_button .icon_svg {
-    stroke: white;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+.onNight .alignCenter_logo .icon_svg, .onNight .menu_button .icon_svg {
+    stroke: #fff;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
 }
 
 .onNight .mainPage {
-    color: white;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+    color: #fff
 }
 
-/* To remove every hyperlink color change */
-a, a:hover, a:visited, a:active {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* To keep buttons on the right */
 .right {
     display: flex;
-    justify-content: space-evenly;
-}
-
-/* General Behaviour for buttons */
-button {
-    background-color: transparent;
-}
-
-@font-face {
-    font-family: "Jetbrain";
-    src: url("image/JetBrainsMono-Regular.woff2");
-}
-
-.contact_logo {
-    border: 2px solid transparent;
-    color: black;
-    padding: 5px 11px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: Jetbrain, serif;
-    border-radius: 36px;
-    -webkit-transition-duration: 0.15s; /* Safari */
-    transition-duration: 0.15s;
-    font-weight: bold;
-}
-
-.contact_logo:hover {
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    border: 2px solid black;
-}
-
-.onNight .contact_logo {
-    color: white;
-}
-
-.onNight .contact_logo:hover {
-    border: 2px solid white;
-    box-shadow: 0 6px 8px 0 rgba(149, 165, 166, 0.20);
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.70);
+    justify-content: space-evenly
 }
 
 .alignCenter_logo .icon_svg {
-    stroke: black;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-}
-
-.onNight .alignCenter_logo .icon_svg {
-    stroke: white;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
+    stroke: #000
 }
 
 .copyright_text {
-    float: left;
-    font-size: 14px
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%
+}
+
+.onNight .copyright_text {
+    color: #fff
+}
+
+.alignCenter_logo, .alignCenter_logo .icon_svg {
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
 }
 
 .alignCenter_logo {
     float: right;
     border: 1px solid transparent;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-    border-radius: 3px;
+    border-radius: 3px
 }
 
-.alignCenter_logo:hover {
-    border: 1px solid transparent;
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.alignCenter_logo:hover, .intro {
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .5), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
-
-.onNight .alignCenter_logo:hover {
-    border: 1px solid transparent;
-}
-
-section {
-    display: none;
-}
-
-section:target {
-    display: block;
-}
-
 
 .intro {
     text-align: left;
     width: 80%;
     padding: 30px;
-    margin: 10px auto 0 auto;
-    border: 2px solid black;
+    margin: 10px auto 0;
+    border: 2px solid #000;
     border-radius: 20px;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
+}
 
+.alignCenter_logo:hover, .onNight .alignCenter_logo:hover {
+    border: 1px solid transparent
 }
 
 .onNight .intro {
-    color: white;
-    border: 2px solid white;
+    color: #fff;
+    border: 2px solid #fff
+}
 
+#button, .footer {
+    position: fixed;
+    text-align: center
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    border-top: 2px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.5), 0 -17px 50px 0 rgba(232, 220, 202, 0.19);
+    right: 0;
+    border-top: 2px solid rgba(0, 0, 0, .5);
     bottom: 0;
     width: 100%;
-    background-color: transparent;
-    color: black;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-    text-align: center;
+    background-color: beige;
+    color: #000
+}
+
+#button, .footer, .onNight .footer {
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
 }
 
 .onNight .footer {
-    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.5), 0 -17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, .5), 0 -17px 50px 0 rgba(0, 0, 0, .19);
+    border-top: 2px solid rgba(255, 255, 255, .5);
+    color: #fff;
+    background-color: #2b2d30
+}
 
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.2s;
-    color: white;
+#button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    right: 20px;
+    transition: background-color .3s, opacity .3s, visibility .3s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    padding: 6px 0;
+    border-radius: 36px
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible
 }

@@ -205,3 +205,8 @@ section:target {
     opacity: 1;
     visibility: visible
 }
+
+.fofBody
+{
+    margin-top: 50px;
+}

@@ -17,10 +17,6 @@ button {
     src: url(file/JetBrainsMono-Regular.woff2)
 }
 
-@font-face {
-    font-family: 'NotoColor';
-    src: url(file/NotoColorEmoji-Regular.ttf)
-}
 
 a, a:active, a:hover, a:visited {
     color: inherit;
@@ -52,7 +48,7 @@ section:target {
 
 .avatar_img:hover, .menu_button:hover {
     border: 4px solid #1e90ff;
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .65)
 }
 
 .menu_button:hover {
@@ -195,7 +191,7 @@ section:target {
     right: 20px;
     transition: background-color .3s, opacity .3s, visibility .3s;
     opacity: 0;
-    visibility: hidden;
+    visibility: visible;
     z-index: 1000;
     padding: 6px 0;
     border-radius: 36px

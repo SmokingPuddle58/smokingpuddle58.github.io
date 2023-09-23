@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <script src="style.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <title>404</title>
+
+
 </head>
 <body>
 <script>
@@ -15,10 +18,14 @@
         changeEmoji();
         changeSentence();
     }
+
+    $(function () {
+        $("#navigation").load("page/nav.html");
+    });
 </script>
 
 <main>
-
+<div id="navigation"></div>
     <div class="mainPage fofBody">
         <button class="menu_button"
                 style="margin: 0; position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); font-size: xxx-large; padding-left:30px;padding-right:30px; border-radius: 50px"
@@ -72,7 +79,7 @@
         </a>
 
     </div>
-    <div class="copyright_text">
+    <div class="copyright_text footer">
         <a href="https://github.com/lukePeavey/quotable/blob/master/LICENCE.md">Quotes are licensed under the MIT
             License</a>
     </div>

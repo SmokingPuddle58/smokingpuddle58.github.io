@@ -9,14 +9,14 @@ body {
 }
 
 button {
-    background-color: transparent
+    background-color: transparent;
+    cursor: pointer
 }
 
 @font-face {
     font-family: "Jetbrain";
-    src: url(file/JetBrainsMono-Regular.woff2)
+    src: url(JetBrainsMono-Regular.woff2)
 }
-
 
 a, a:active, a:hover, a:visited {
     color: inherit;
@@ -37,7 +37,8 @@ section:target {
 }
 
 .onNight {
-    background-color: #2b2d30
+    background-color: #2b2d30;
+    color: #e1e1e1
 }
 
 .avatar_img {
@@ -61,7 +62,8 @@ section:target {
 }
 
 .onNight .menu_button:hover {
-    border: 2px solid #fff
+    border: 2px solid #e1e1e1;
+    color: #e1e1e1
 }
 
 .menu_button {
@@ -80,7 +82,7 @@ section:target {
 }
 
 .onNight .menu_button {
-    color: #fff
+    color: #e1e1e1
 }
 
 .menu_button .icon_svg, .onNight .mainPage {
@@ -93,13 +95,13 @@ section:target {
 }
 
 .onNight .alignCenter_logo .icon_svg, .onNight .menu_button .icon_svg {
-    stroke: #fff;
+    stroke: #e1e1e1;
     -webkit-transition-duration: .2s;
     transition-duration: .2s
 }
 
 .onNight .mainPage {
-    color: #fff
+    color: #e1e1e1
 }
 
 .right {
@@ -119,7 +121,7 @@ section:target {
 }
 
 .onNight .copyright_text {
-    color: #fff
+    color: #e1e1e1
 }
 
 .alignCenter_logo, .alignCenter_logo .icon_svg {
@@ -153,8 +155,8 @@ section:target {
 }
 
 .onNight .intro {
-    color: #fff;
-    border: 2px solid #fff
+    color: #e1e1e1;
+    border: 2px solid #e1e1e1
 }
 
 #button, .footer {
@@ -179,7 +181,7 @@ section:target {
 .onNight .footer {
     box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, .5), 0 -17px 50px 0 rgba(0, 0, 0, .19);
     border-top: 2px solid rgba(255, 255, 255, .5);
-    color: #fff;
+    color: #e1e1e1;
     background-color: #2b2d30
 }
 
@@ -202,7 +204,6 @@ section:target {
     visibility: visible
 }
 
-.fofBody
-{
-    margin-top: 70px;
+.fofBody {
+    margin-top: 70px
 }

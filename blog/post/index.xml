@@ -7,27 +7,6 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>My own feeling about Wayland in daily use</title>
-        <link>https://smokingpuddle58.github.io/blog/p/bad-linux/</link>
-        <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
-        
-        <guid>https://smokingpuddle58.github.io/blog/p/bad-linux/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; Wayland has really improved a lot from 6 months before, especially on KDE, but still it&amp;rsquo;s not as stable as X
-so I switched back to X 😭.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;OK before that let me briefly introduce Wayland.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Wayland is developed by a group of volunteers initially led by Kristian Høgsberg as
-a free and open-source community-driven project &lt;strong&gt;with the aim of replacing the X Window
-System&lt;/strong&gt; with a modern, secure, and simpler windowing system for Linux and
-other Unix-like operating systems. (Wikipedia, 2023) (Yep I still remember in-text citation from LANG courses)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The first time I use Wayland was when I first tried linux on my PC in Fedora, and the distro used Gnome as the default desktop environment.&lt;/p&gt;
-&lt;p&gt;To be continued &amp;hellip;&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>First Blog</title>
         <link>https://smokingpuddle58.github.io/blog/p/hello-world/</link>
         <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>

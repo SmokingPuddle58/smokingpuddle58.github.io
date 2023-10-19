@@ -131,9 +131,32 @@ section:target {
 
 .alignCenter_logo {
     float: right;
-    border: 1px solid transparent;
-    border-radius: 3px
+    background: beige;
+    border: 2px solid transparent;
+    border-radius: 10px
 }
+
+.onNight .alignCenter_logo {
+    border: 2px solid transparent;
+    background: #2b2d30;
+}
+
+.alignCenter_logo:hover {
+    border: 2px solid #1e90ff;
+}
+
+.onNight .alignCenter_logo:hover {
+    border: 2px solid orange;
+}
+
+.alignCenter_logo:hover .icon_svg {
+    stroke: #1e90ff;
+}
+
+.onNight .alignCenter_logo:hover .icon_svg {
+    stroke: orange;
+}
+
 
 .alignCenter_logo:hover, .intro {
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .5), 0 17px 50px 0 rgba(0, 0, 0, .19)
@@ -150,9 +173,6 @@ section:target {
     transition-duration: .2s
 }
 
-.alignCenter_logo:hover, .onNight .alignCenter_logo:hover {
-    border: 1px solid transparent
-}
 
 .onNight .intro {
     color: #e1e1e1;

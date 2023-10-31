@@ -1,4 +1,5 @@
 // To enable dark mode automatically.
+
 function toggleDark() {
     let isOn = document.body.classList.toggle("onNight");
     if (isOn) {

@@ -1,8 +1,6 @@
 body {
     background-color: beige;
     font-family: "Jetbrain", "NotoColor", serif;
-    -webkit-transition-duration: .2s;
-    transition-duration: .2s;
     display: grid;
     margin-bottom: 50px;
     position: relative
@@ -31,8 +29,11 @@ a, a:active, a:hover, a:visited {
     text-decoration: none
 }
 
-.avatar_img, .onNight {
-    -webkit-transition-duration: .2s;
+.avatar_img {
+    transition-duration: .2s
+}
+
+.avatar_img .onNight {
     transition-duration: .2s
 }
 
@@ -76,28 +77,24 @@ a, a:active, a:hover, a:visited {
     font-size: 16px;
     font-family: Jetbrain, serif;
     border-radius: 36px;
-    -webkit-transition-duration: .15s;
-    transition-duration: .15s;
     font-weight: 700
 }
 
 .onNight .menu_button {
     color: #e1e1e1
 }
-
+/*
 .menu_button .icon_svg, .onNight .mainPage {
-    -webkit-transition-duration: .2s;
+    /*-webkit-transition-duration: .2s;
     transition-duration: .2s
 }
-
+*/
 .menu_button .icon_svg {
     stroke: #000
 }
 
 .onNight .alignCenter_logo .icon_svg, .onNight .menu_button .icon_svg {
     stroke: #e1e1e1;
-    -webkit-transition-duration: .2s;
-    transition-duration: .2s
 }
 
 .onNight .mainPage {
@@ -124,10 +121,6 @@ a, a:active, a:hover, a:visited {
     color: #e1e1e1
 }
 
-.alignCenter_logo, .alignCenter_logo .icon_svg {
-    -webkit-transition-duration: .2s;
-    transition-duration: .2s
-}
 
 .alignCenter_logo {
     float: right;
@@ -168,8 +161,6 @@ a, a:active, a:hover, a:visited {
     margin: 10px auto 0;
     border: 2px solid #000;
     border-radius: 20px;
-    -webkit-transition-duration: .2s;
-    transition-duration: .2s
 }
 
 .onNight .intro {
@@ -191,10 +182,6 @@ a, a:active, a:hover, a:visited {
     color: #000
 }
 
-#button, .footer, .onNight .footer {
-    -webkit-transition-duration: .2s;
-    transition-duration: .2s
-}
 
 .onNight .footer {
     box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, .5), 0 -17px 50px 0 rgba(0, 0, 0, .19);

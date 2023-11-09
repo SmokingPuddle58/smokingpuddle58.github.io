@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type"
+          content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content=
+            "width=device-width,minimum-scale=1,
+		initial-scale=1">
+
+    <script src=
+                    "https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+
+    <script src=
+                    "https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js">
+    </script>
+
+    <link rel="stylesheet" href=
+            "https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+</head>
+
+<body>
+<script>
+
+    // In body tag
+    $('body').terminal(
+        {
+            help: function () {
+                this.echo(
+                    "- tree: Show the structure of the website.\n" +
+                    "- whoami: Prints the effective username of the current user when invoked.\n" +
+                    "- help: Show this help page\n" +
+                    "- exit: Quit this page.\n" +
+                    "- I will implement more functions later 🤔");
+            },
+            tree: function () {
+                this.echo(".\n" +
+                    "├── 404.html\n" +
+                    "├── file\n" +
+                    "│   ├── JetBrainsMono-Regular.woff2\n" +
+                    "│   ├── MATH3121_NOTES.pdf\n" +
+                    "│   ├── style.css\n" +
+                    "│   └── style.js\n" +
+                    "├── image\n" +
+                    "│   ├── avatar_small.png\n" +
+                    "│   ├── calculus-cat-cat-math.gif\n" +
+                    "│   ├── cat-rest-lazy-laying-bed.gif\n" +
+                    "│   ├── cat-typing.gif\n" +
+                    "│   ├── desmond.gif\n" +
+                    "│   └── potato-see.gif\n" +
+                    "├── index.html\n" +
+                    "└── page\n" +
+                    "    ├── about.html\n" +
+                    "    ├── button.html\n" +
+                    "    ├── course.html\n" +
+                    "    ├── footer.html\n" +
+                    "    ├── home.html\n" +
+                    "    ├── nav.html\n" +
+                    "    ├── project.html\n" +
+                    "    └── terminal.html\n" +
+                    "\n" +
+                    "4 directories, 20 files\n")
+            },
+
+            whoami: function () {
+                this.echo("smokingpuddle58");
+            },
+
+            exit: function () {
+                window.close();
+                history.back();
+            },
+        },
+        {
+            greetings: 'Welcome to SmokingPuddle58\'s web terminal. To get a list of usable command, type \"help\".',
+            name: 'smokingpuddle58.github.io',
+            prompt: 'smokingpuddle58.github.io> ',
+            color: 'yellow',
+        });
+
+</script>
+</body>
+
+</html>

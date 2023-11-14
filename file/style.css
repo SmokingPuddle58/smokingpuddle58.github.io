@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Jetbrain";
+    src: url(JetBrainsMono-Regular.woff2)
+}
+
+.onNight {
+    background-color: #2b2d30;
+    color: #e1e1e1
+}
+
 body {
     background-color: beige;
     font-family: "Jetbrain", "NotoColor", serif;
@@ -19,27 +29,9 @@ button {
     cursor: pointer
 }
 
-@font-face {
-    font-family: "Jetbrain";
-    src: url(JetBrainsMono-Regular.woff2)
-}
-
 a, a:active, a:hover, a:visited {
     color: inherit;
     text-decoration: none
-}
-
-.avatar_img {
-    transition-duration: .2s
-}
-
-.avatar_img .onNight {
-    transition-duration: .2s
-}
-
-.onNight {
-    background-color: #2b2d30;
-    color: #e1e1e1
 }
 
 .avatar_img {
@@ -48,23 +40,16 @@ a, a:active, a:hover, a:visited {
     padding: 2px
 }
 
+.avatar_img, .avatar_img .onNight {
+    transition-duration: .2s
+}
+
+.avatar_img:hover {
+    border: 4px solid #1e90ff
+}
+
 .avatar_img:hover, .menu_button:hover {
-    border: 4px solid #1e90ff;
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .65)
-}
-
-.menu_button:hover {
-    border: 2px solid #000
-}
-
-.onNight .avatar_img:hover, .onNight .menu_button:hover {
-    border: 4px solid orange;
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .7)
-}
-
-.onNight .menu_button:hover {
-    border: 2px solid #e1e1e1;
-    color: #e1e1e1
 }
 
 .menu_button {
@@ -84,18 +69,26 @@ a, a:active, a:hover, a:visited {
     color: #e1e1e1
 }
 
-/*
-.menu_button .icon_svg, .onNight .mainPage {
-    /*-webkit-transition-duration: .2s;
-    transition-duration: .2s
+.menu_button:hover {
+    border: 2px solid #000
 }
-*/
+
+.onNight .avatar_img:hover, .onNight .menu_button:hover {
+    border: 4px solid orange;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .7)
+}
+
+.onNight .menu_button:hover {
+    border: 2px solid #e1e1e1;
+    color: #e1e1e1
+}
+
 .menu_button .icon_svg {
     stroke: #000
 }
 
-.onNight .alignCenter_logo .icon_svg, .onNight .menu_button .icon_svg {
-    stroke: #e1e1e1;
+.onNight .footer_logo .icon_svg, .onNight .menu_button .icon_svg {
+    stroke: #e1e1e1
 }
 
 .onNight .mainPage {
@@ -107,7 +100,7 @@ a, a:active, a:hover, a:visited {
     justify-content: space-evenly
 }
 
-.alignCenter_logo .icon_svg {
+.footer_logo .icon_svg {
     stroke: #000
 }
 
@@ -122,36 +115,35 @@ a, a:active, a:hover, a:visited {
     color: #e1e1e1
 }
 
-
-.alignCenter_logo {
+.footer_logo {
     float: right;
     background: beige;
     border: 2px solid transparent;
     border-radius: 10px
 }
 
-.onNight .alignCenter_logo {
+.onNight .footer_logo {
     border: 2px solid transparent;
     background: #2b2d30
 }
 
-.alignCenter_logo:hover {
+.footer_logo:hover {
     border: 2px solid #1e90ff
 }
 
-.onNight .alignCenter_logo:hover {
+.onNight .footer_logo:hover {
     border: 2px solid orange
 }
 
-.alignCenter_logo:hover .icon_svg {
+.footer_logo:hover .icon_svg {
     stroke: #1e90ff
 }
 
-.onNight .alignCenter_logo:hover .icon_svg {
+.onNight .footer_logo:hover .icon_svg {
     stroke: orange
 }
 
-.alignCenter_logo:hover, .intro {
+.footer_logo:hover, .intro {
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .5), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 
@@ -161,7 +153,7 @@ a, a:active, a:hover, a:visited {
     padding: 30px;
     margin: 10px auto 0;
     border: 2px solid #000;
-    border-radius: 20px;
+    border-radius: 20px
 }
 
 .onNight .intro {
@@ -183,7 +175,6 @@ a, a:active, a:hover, a:visited {
     color: #000
 }
 
-
 .onNight .footer {
     box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, .5), 0 -17px 50px 0 rgba(0, 0, 0, .19);
     border-top: 2px solid rgba(255, 255, 255, .5);
@@ -197,7 +188,7 @@ a, a:active, a:hover, a:visited {
     height: 50px;
     bottom: 40px;
     right: 20px;
-    transition: background-color .3s, opacity .3s, visibility .3s;
+    /*transition: background-color .3s, opacity .3s, visibility .3s;*/
     opacity: 0;
     visibility: visible;
     z-index: 1000;
@@ -219,10 +210,4 @@ a, a:active, a:hover, a:visited {
     margin-left: auto;
     margin-right: auto;
     width: 50%
-}
-
-.terminal {
-    --color: green;
-    --background: black;
-    --animation: terminal-bar;
 }

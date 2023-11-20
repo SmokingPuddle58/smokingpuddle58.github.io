@@ -188,7 +188,6 @@ a, a:active, a:hover, a:visited {
     height: 50px;
     bottom: 40px;
     right: 20px;
-    /*transition: background-color .3s, opacity .3s, visibility .3s;*/
     opacity: 0;
     visibility: visible;
     z-index: 1000;

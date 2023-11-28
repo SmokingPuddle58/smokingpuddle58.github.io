@@ -34,6 +34,7 @@
                     "- whoami: Prints the effective username of the current user when invoked.\n" +
                     "- help: Show this help page\n" +
                     "- exit: Quit this page.\n" +
+                    "- sisprod: Go to student center.\n" +
                     "- I will implement more functions later 🤔");
             },
             tree: function () {
@@ -73,7 +74,13 @@
                 window.close();
                 history.back();
             },
+
+            sisprod: function () {
+                window.location.href = 'https://sisprod.psft.ust.hk/psp/SISPROD/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL?pslnkid=Z_HC_SSS_STUDENT_CENTER_LNK&FolderPath=PORTAL_ROOT_OBJECT.Z_HC_SSS_STUDENT_CENTER_LNK&IsFolder=false&IgnoreParamTempl=FolderPath,IsFolder';
+            },
         },
+
+
         {
             greetings: 'Welcome to SmokingPuddle58\'s web terminal. To get a list of usable command, type \"help\".',
             name: 'smokingpuddle58.github.io',

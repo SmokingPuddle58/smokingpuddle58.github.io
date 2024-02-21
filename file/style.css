@@ -53,7 +53,7 @@ a, a:active, a:hover, a:visited {
 }
 
 .menu_button:hover {
-    box-shadow:rgb(0, 0, 0) 2px 3px 0px;
+    box-shadow:rgb(0, 0, 0) 2px 3px 0;
 }
 
 .menu_button:active
@@ -91,7 +91,7 @@ a, a:active, a:hover, a:visited {
 .onNight .menu_button:hover {
     border: 2px solid #e1e1e1;
     color: #e1e1e1;
-    box-shadow:rgb(225, 225, 225) 2px 3px 0px;
+    box-shadow:rgb(225, 225, 225) 2px 3px 0;
 }
 
 .onNight .menu_button:active
@@ -165,18 +165,18 @@ a, a:active, a:hover, a:visited {
 
 .intro {
     text-align: left;
-    width: 80%;
-    padding: 30px;
-    margin: 10px auto 0;
+    width: 75%;
+    padding: 25px;
+    margin: 20px auto 0;
     border: 2px solid #000;
     border-radius: 20px;
-    box-shadow: rgb(0, 0, 0) 7px 7px 0px;
+    box-shadow: rgb(0, 0, 0) 7px 7px 0;
 }
 
 .onNight .intro {
     color: #e1e1e1;
     border: 2px solid #e1e1e1;
-    box-shadow: rgb(225, 225, 225) 7px 7px 0px;
+    box-shadow: rgb(225, 225, 225) 7px 7px 0;
 }
 
 #button, .footer {

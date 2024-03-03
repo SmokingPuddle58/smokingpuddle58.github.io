@@ -6,7 +6,102 @@
         <description>Recent content in Posts on SmokingPuddle58&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Smoothing (Lowpass) Spatial Filters</title>
+        <link>https://smokingpuddle58.github.io/blog/p/spatial-filters/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/p/spatial-filters/</guid>
+        <description>&lt;p&gt;Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.&lt;/p&gt;
+&lt;h2 id=&#34;box-filter-kernels&#34;&gt;Box Filter Kernels&lt;/h2&gt;
+&lt;p&gt;This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all &lt;code&gt;1&lt;/code&gt;&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$). To create such a kernel in numpy, we can use the following code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;averaging_filter&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;For example, a $3\times 3$ averaging filter will look like this:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{bmatrix}
+\frac{1}{9} &amp;amp; \frac{1}{9} &amp;amp;  \frac{1}{9} \\
+&amp;amp; \\
+\frac{1}{9} &amp;amp; \frac{1}{9} &amp;amp;  \frac{1}{9} \\
+&amp;amp; \\
+\frac{1}{9} &amp;amp; \frac{1}{9} &amp;amp;  \frac{1}{9} \\
+\end{bmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;The filter are suitable for quick experimentation. However, it is a poor approximation to blurring characteristics of lenses, also the filter only favor blurring along prependicular directions.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/box_kernel.png&#34;
+	width=&#34;1121&#34;
+	height=&#34;774&#34;
+	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Box filter kernel&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;347px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lowpass-gaussian-filter-kernels&#34;&gt;Lowpass Gaussian Filter Kernels&lt;/h2&gt;
+&lt;p&gt;Gaussian kernel is the only circularly symmetric kernels that are separable. It is in the following form.&lt;/p&gt;
+&lt;p&gt;$$w(s,t) = G(s,t) = \frac{1}{2\pi\sigma}e^{-\frac{s^2+t^2}{2\sigma^2}}$$&lt;/p&gt;
+&lt;p&gt;It is possible to derive arbitrary $n\times n$ Gaussian filter kernels for given $\sigma$, where $n$ is odd number.&lt;/p&gt;
+&lt;p&gt;The center of the Gaussian filter $(x,y)$ must be 0. The following is a example of $3\times 3$ matrix for calculating Gaussian filter:&lt;/p&gt;
+&lt;p&gt;$$
+\left[\begin{array}{ccc}
+(- 1, - 1) &amp;amp; (0, - 1) &amp;amp; (1, - 1)\\
+(- 1, 0) &amp;amp; (0, 0) &amp;amp;  (1, 0)\\
+(- 1, 1) &amp;amp; (0, 1) &amp;amp; (1, 1)\\
+\end{array}\right]
+$$&lt;/p&gt;
+&lt;p&gt;Substitude the value of $x,y$ and $\sigma$ into the formula stated above, performing normalization, we can then get the Gaussian filter. In this case, for simplicity, if we let $\sigma=1$, then we have the kernel to be:&lt;/p&gt;
+&lt;p&gt;$$
+\left[\begin{array}{ccc}
+(- 1, - 1) &amp;amp; (0, - 1) &amp;amp; (1, - 1)\\
+(- 1, 0) &amp;amp; (0, 0) &amp;amp;  (1, 0)\\
+(- 1, 1) &amp;amp; (0, 1) &amp;amp; (1, 1)\\
+\end{array}\right]
+$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/comparison.png&#34;
+	width=&#34;1204&#34;
+	height=&#34;610&#34;
+	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Comparison between box filter kernel and Gaussian filter kernel&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;473px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;median-filter-kernel---non-linear-filter-kernel&#34;&gt;Median Filter Kernel - Non-linear Filter Kernel&lt;/h2&gt;
+&lt;p&gt;A non-linear filter will examine neighbours using various orderings, one of the most common one is order statistics. While a linear filter is a linear operation that its&amp;rsquo; output can be expressed as the convolution of image with filter. Moreover, linear filters have corresponding frequency domain filter.&lt;/p&gt;
+&lt;p&gt;Among the non-linear filter kernel, one of the most popular one is median filter. It examines the neighbourhood pixels, and find the median of the window. The filter kernel preserves edges, while removing impulse noise, and it avoids excessive smoothing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/image.png&#34;
+	width=&#34;1212&#34;
+	height=&#34;519&#34;
+	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Noise reduction with Gaussian and median filter kernel&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;233&#34;
+		data-flex-basis=&#34;560px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>First Blog</title>
         <link>https://smokingpuddle58.github.io/blog/p/hello-world/</link>
         <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
@@ -37,51 +132,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Spatial Filters</title>
-        <link>https://smokingpuddle58.github.io/blog/p/spatial-filters/</link>
-        <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
-        
-        <guid>https://smokingpuddle58.github.io/blog/p/spatial-filters/</guid>
-        <description>&lt;h2 id=&#34;smoothing-lowpass-spatial-filters&#34;&gt;Smoothing (Lowpass) Spatial Filters&lt;/h2&gt;
-&lt;p&gt;Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.&lt;/p&gt;
-&lt;h3 id=&#34;box-filter-kernels&#34;&gt;Box Filter Kernels&lt;/h3&gt;
-&lt;p&gt;This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all &lt;code&gt;1&lt;/code&gt;&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$). To create such a kernel in numpy, we can use the following code.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;averaging_filter&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;For example, a $3\times 3$ averaging filter will look like this:&lt;/p&gt;
-&lt;p&gt;$$
-\begin{bmatrix}
-\frac{1}{9} &amp;amp; \frac{1}{9} &amp;amp;  \frac{1}{9} \\
-&amp;amp; \\
-\frac{1}{9} &amp;amp; \frac{1}{9} &amp;amp;  \frac{1}{9} \\
-&amp;amp; \\
-\frac{1}{9} &amp;amp; \frac{1}{9} &amp;amp;  \frac{1}{9} \\
-\end{bmatrix}
-$$&lt;/p&gt;
-&lt;p&gt;The filter are suitable for quick experimentation. However, it is a poor approximation to blurring characteristics of lenses, also the filter only favor blurring along prependicular directions.&lt;/p&gt;
-&lt;h3 id=&#34;lowpass-gaussian-filter-kernels&#34;&gt;Lowpass Gaussian Filter Kernels&lt;/h3&gt;
-&lt;p&gt;Gaussian kernel is the only circularly symmetric kernels that are separable. It is in the following form.&lt;/p&gt;
-&lt;p&gt;$$w(s,t) = G(s,t) = Ke^{-\frac{s^2+t^2}{2\sigma^2}}$$&lt;/p&gt;
-&lt;p&gt;It is possible to derive arbitrary $n\times n$ Gaussian filter kernels for given $\sigma$.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/image.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Image 1&#34;
-	
-	
-&gt;&lt;/p&gt;
-</description>
         </item>
         
     </channel>

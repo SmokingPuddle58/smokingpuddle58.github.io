@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Academincs on SmokingPuddle58&#39;s Blog</title>
-        <link>https://smokingpuddle58.github.io/blog/categories/academics/</link>
-        <description>Recent content in Academincs on SmokingPuddle58&#39;s Blog</description>
+        <title>Image Processing on SmokingPuddle58&#39;s Blog</title>
+        <link>https://smokingpuddle58.github.io/blog/tags/image-processing/</link>
+        <description>Recent content in Image Processing on SmokingPuddle58&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/categories/academics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/tags/image-processing/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Smoothing (Lowpass) Spatial Filters</title>
         <link>https://smokingpuddle58.github.io/blog/p/spatial-filters/</link>
         <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Smoothing (Lowpass) Spatial Filters Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
 Box Filter Kernels This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all 1&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$).'>
-<title>Spatial Filters</title>
+<title>Smoothing (Lowpass) Spatial Filters</title>
 
 <link rel='canonical' href='https://smokingpuddle58.github.io/blog/p/spatial-filters/'>
 
-<link rel="stylesheet" href="/blog/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Spatial Filters'>
-<meta property='og:description' content='Smoothing (Lowpass) Spatial Filters Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
+<link rel="stylesheet" href="/blog/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Smoothing (Lowpass) Spatial Filters'>
+<meta property='og:description' content='Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
 Box Filter Kernels This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all 1&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$).'>
 <meta property='og:url' content='https://smokingpuddle58.github.io/blog/p/spatial-filters/'>
 <meta property='og:site_name' content='SmokingPuddle58&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Academics' /><meta property='article:published_time' content='2023-09-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-09-09T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Spatial Filters">
-<meta name="twitter:description" content="Smoothing (Lowpass) Spatial Filters Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Image Processing' /><meta property='article:published_time' content='2024-03-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-03T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Smoothing (Lowpass) Spatial Filters">
+<meta name="twitter:description" content="Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
 Box Filter Kernels This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all 1&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$).">
     <link rel="shortcut icon" href="/favicon.png" />
 
@@ -271,12 +271,9 @@ Box Filter Kernels This is the most simple filter kernel. This filter can be cre
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#smoothing-lowpass-spatial-filters">Smoothing (Lowpass) Spatial Filters</a>
-      <ol>
-        <li><a href="#box-filter-kernels">Box Filter Kernels</a></li>
-        <li><a href="#lowpass-gaussian-filter-kernels">Lowpass Gaussian Filter Kernels</a></li>
-      </ol>
-    </li>
+    <li><a href="#box-filter-kernels">Box Filter Kernels</a></li>
+    <li><a href="#lowpass-gaussian-filter-kernels">Lowpass Gaussian Filter Kernels</a></li>
+    <li><a href="#median-filter-kernel---non-linear-filter-kernel">Median Filter Kernel - Non-linear Filter Kernel</a></li>
   </ol>
 </nav>
         </div>
@@ -304,7 +301,7 @@ Box Filter Kernels This is the most simple filter kernel. This filter can be cre
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/blog/p/spatial-filters/">Spatial Filters</a>
+            <a href="/blog/p/spatial-filters/">Smoothing (Lowpass) Spatial Filters</a>
         </h2>
     
         
@@ -326,7 +323,7 @@ Box Filter Kernels This is the most simple filter kernel. This filter can be cre
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Sep 09, 2023</time>
+                <time class="article-time--published">Mar 03, 2024</time>
             </div>
         
 
@@ -341,7 +338,7 @@ Box Filter Kernels This is the most simple filter kernel. This filter can be cre
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    2 minute read
                 </time>
             </div>
         
@@ -356,9 +353,8 @@ Box Filter Kernels This is the most simple filter kernel. This filter can be cre
     <section class="article-content">
     
     
-    <h2 id="smoothing-lowpass-spatial-filters">Smoothing (Lowpass) Spatial Filters</h2>
-<p>Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.</p>
-<h3 id="box-filter-kernels">Box Filter Kernels</h3>
+    <p>Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.</p>
+<h2 id="box-filter-kernels">Box Filter Kernels</h2>
 <p>This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all <code>1</code>&rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$). To create such a kernel in numpy, we can use the following code.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -379,18 +375,69 @@ Box Filter Kernels This is the most simple filter kernel. This filter can be cre
 \end{bmatrix}
 $$</p>
 <p>The filter are suitable for quick experimentation. However, it is a poor approximation to blurring characteristics of lenses, also the filter only favor blurring along prependicular directions.</p>
-<h3 id="lowpass-gaussian-filter-kernels">Lowpass Gaussian Filter Kernels</h3>
-<p>Gaussian kernel is the only circularly symmetric kernels that are separable. It is in the following form.</p>
-<p>$$w(s,t) = G(s,t) = Ke^{-\frac{s^2+t^2}{2\sigma^2}}$$</p>
-<p>It is possible to derive arbitrary $n\times n$ Gaussian filter kernels for given $\sigma$.</p>
-<p><img src="/blog/image.jpg"
-	
-	
-	
+<p><img src="/blog/p/spatial-filters/box_kernel.png"
+	width="1121"
+	height="774"
+	srcset="/blog/p/spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_480x0_resize_box_3.png 480w, /blog/p/spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_1024x0_resize_box_3.png 1024w"
 	loading="lazy"
 	
-		alt="Image 1"
+		alt="Box filter kernel"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+></p>
+<h2 id="lowpass-gaussian-filter-kernels">Lowpass Gaussian Filter Kernels</h2>
+<p>Gaussian kernel is the only circularly symmetric kernels that are separable. It is in the following form.</p>
+<p>$$w(s,t) = G(s,t) = \frac{1}{2\pi\sigma}e^{-\frac{s^2+t^2}{2\sigma^2}}$$</p>
+<p>It is possible to derive arbitrary $n\times n$ Gaussian filter kernels for given $\sigma$, where $n$ is odd number.</p>
+<p>The center of the Gaussian filter $(x,y)$ must be 0. The following is a example of $3\times 3$ matrix for calculating Gaussian filter:</p>
+<p>$$
+\left[\begin{array}{ccc}
+(- 1, - 1) &amp; (0, - 1) &amp; (1, - 1)\\
+(- 1, 0) &amp; (0, 0) &amp;  (1, 0)\\
+(- 1, 1) &amp; (0, 1) &amp; (1, 1)\\
+\end{array}\right]
+$$</p>
+<p>Substitude the value of $x,y$ and $\sigma$ into the formula stated above, performing normalization, we can then get the Gaussian filter. In this case, for simplicity, if we let $\sigma=1$, then we have the kernel to be:</p>
+<p>$$
+\left[\begin{array}{ccc}
+(- 1, - 1) &amp; (0, - 1) &amp; (1, - 1)\\
+(- 1, 0) &amp; (0, 0) &amp;  (1, 0)\\
+(- 1, 1) &amp; (0, 1) &amp; (1, 1)\\
+\end{array}\right]
+$$</p>
+<p><img src="/blog/p/spatial-filters/comparison.png"
+	width="1204"
+	height="610"
+	srcset="/blog/p/spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_480x0_resize_box_3.png 480w, /blog/p/spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Comparison between box filter kernel and Gaussian filter kernel"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="197"
+		data-flex-basis="473px"
+	
+></p>
+<h2 id="median-filter-kernel---non-linear-filter-kernel">Median Filter Kernel - Non-linear Filter Kernel</h2>
+<p>A non-linear filter will examine neighbours using various orderings, one of the most common one is order statistics. While a linear filter is a linear operation that its&rsquo; output can be expressed as the convolution of image with filter. Moreover, linear filters have corresponding frequency domain filter.</p>
+<p>Among the non-linear filter kernel, one of the most popular one is median filter. It examines the neighbourhood pixels, and find the median of the window. The filter kernel preserves edges, while removing impulse noise, and it avoids excessive smoothing.</p>
+<p><img src="/blog/p/spatial-filters/image.png"
+	width="1212"
+	height="519"
+	srcset="/blog/p/spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_480x0_resize_box_3.png 480w, /blog/p/spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Noise reduction with Gaussian and median filter kernel"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="233"
+		data-flex-basis="560px"
 	
 ></p>
 
@@ -401,7 +448,7 @@ $$</p>
     
     <section class="article-tags">
         
-            <a href="/blog/tags/academics/">Academics</a>
+            <a href="/blog/tags/image-processing/">Image Processing</a>
         
     </section>
 

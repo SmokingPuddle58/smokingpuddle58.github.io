@@ -228,3 +228,10 @@ a, a:active, a:hover, a:visited {
     margin-right: auto;
     width: 50%
 }
+
+.imagecenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}

@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Laplacian operator Note that the Laplacian operator is the simplest isotropic derivative kernel. For any image $f(x,y)$, it is defined as:
-$$\nabla^2f=\frac{\partial f}{\partial x^2} &#43; \frac{\partial f}{\partial y^2}$$
-Since derivatives of any order are linear operation, thus Laplacian is also a linear operator.
-If we define the derivatives as the following:
-$$\frac{\partial f}{\partial x} = f (x &#43; 1) - f (x)$$
-Then it is not difficult to derive that: $$\frac{\partial^2 f}{\partial x^2} = f (x &#43; 1) &#43; f (x - 1) - 2 f (x)$$'>
-<title>Sharpening (Highpass) Spatial Filters</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
+Box Filter Kernels This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all 1&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$).'>
+<title>Smoothing (Lowpass) Spatial Filters</title>
 
-<link rel='canonical' href='https://smokingpuddle58.github.io/blog/p/spatial-filters/'>
+<link rel='canonical' href='https://smokingpuddle58.github.io/blog/p/smoothing-spatial-filters/'>
 
-<link rel="stylesheet" href="/blog/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Sharpening (Highpass) Spatial Filters'>
-<meta property='og:description' content='Laplacian operator Note that the Laplacian operator is the simplest isotropic derivative kernel. For any image $f(x,y)$, it is defined as:
-$$\nabla^2f=\frac{\partial f}{\partial x^2} &#43; \frac{\partial f}{\partial y^2}$$
-Since derivatives of any order are linear operation, thus Laplacian is also a linear operator.
-If we define the derivatives as the following:
-$$\frac{\partial f}{\partial x} = f (x &#43; 1) - f (x)$$
-Then it is not difficult to derive that: $$\frac{\partial^2 f}{\partial x^2} = f (x &#43; 1) &#43; f (x - 1) - 2 f (x)$$'>
-<meta property='og:url' content='https://smokingpuddle58.github.io/blog/p/spatial-filters/'>
+<link rel="stylesheet" href="/blog/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Smoothing (Lowpass) Spatial Filters'>
+<meta property='og:description' content='Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
+Box Filter Kernels This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all 1&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$).'>
+<meta property='og:url' content='https://smokingpuddle58.github.io/blog/p/smoothing-spatial-filters/'>
 <meta property='og:site_name' content='SmokingPuddle58&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Image Processing' /><meta property='article:published_time' content='2024-03-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-03T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Sharpening (Highpass) Spatial Filters">
-<meta name="twitter:description" content="Laplacian operator Note that the Laplacian operator is the simplest isotropic derivative kernel. For any image $f(x,y)$, it is defined as:
-$$\nabla^2f=\frac{\partial f}{\partial x^2} &#43; \frac{\partial f}{\partial y^2}$$
-Since derivatives of any order are linear operation, thus Laplacian is also a linear operator.
-If we define the derivatives as the following:
-$$\frac{\partial f}{\partial x} = f (x &#43; 1) - f (x)$$
-Then it is not difficult to derive that: $$\frac{\partial^2 f}{\partial x^2} = f (x &#43; 1) &#43; f (x - 1) - 2 f (x)$$">
+<meta name="twitter:title" content="Smoothing (Lowpass) Spatial Filters">
+<meta name="twitter:description" content="Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.
+Box Filter Kernels This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all 1&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$).">
     <link rel="shortcut icon" href="/favicon.png" />
 
     </head>
@@ -283,8 +271,9 @@ Then it is not difficult to derive that: $$\frac{\partial^2 f}{\partial x^2} = f
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#laplacian-operator">Laplacian operator</a></li>
-    <li><a href="#filter-with-first-order-derivative">Filter with first-order derivative</a></li>
+    <li><a href="#box-filter-kernels">Box Filter Kernels</a></li>
+    <li><a href="#lowpass-gaussian-filter-kernels">Lowpass Gaussian Filter Kernels</a></li>
+    <li><a href="#median-filter-kernel---non-linear-filter-kernel">Median Filter Kernel - Non-linear Filter Kernel</a></li>
   </ol>
 </nav>
         </div>
@@ -312,7 +301,7 @@ Then it is not difficult to derive that: $$\frac{\partial^2 f}{\partial x^2} = f
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/blog/p/spatial-filters/">Sharpening (Highpass) Spatial Filters</a>
+            <a href="/blog/p/smoothing-spatial-filters/">Smoothing (Lowpass) Spatial Filters</a>
         </h2>
     
         
@@ -364,47 +353,93 @@ Then it is not difficult to derive that: $$\frac{\partial^2 f}{\partial x^2} = f
     <section class="article-content">
     
     
-    <h2 id="laplacian-operator">Laplacian operator</h2>
-<p>Note that the Laplacian operator is the simplest isotropic derivative kernel. For any image $f(x,y)$, it is defined as:</p>
-<p>$$\nabla^2f=\frac{\partial f}{\partial x^2} + \frac{\partial f}{\partial y^2}$$</p>
-<p>Since derivatives of any order are linear operation, thus Laplacian is also a linear operator.</p>
-<p>If we define the derivatives as the following:</p>
-<p>$$\frac{\partial f}{\partial x} = f (x + 1) - f (x)$$</p>
-<p>Then it is not difficult to derive that:
-$$\frac{\partial^2 f}{\partial x^2} = f (x + 1) + f (x - 1) - 2 f (x)$$</p>
-<p>Since:</p>
-<p>$$\begin{array}{lll}
-\frac{\partial^2 f}{\partial x^2} &amp; = &amp; f (x + 1) - f (x) - (f (x) - f (x -
-1))\\\\
-&amp; = &amp; f (x + 1) + f (x - 1) - 2 f (x)
-\end{array}$$</p>
-<p>We can then derive that:</p>
-<p>$$\begin{cases}
-\frac{\partial^2 f}{\partial x^2} = f (x + 1, y) + f (x - 1, y) - 2 f (x,
-y)\\\\
-\frac{\partial^2 f}{\partial y^2} = f (x, y + 1) + f (x, y - 1) - 2 f (x, y)
-\end{cases}$$</p>
-<p>Thus:</p>
-<p>$$\nabla^2f=f (x + 1, y) + f (x - 1, y) +f (x, y + 1) + f (x, y - 1) - 4 f (x,y)$$</p>
-<p>We let the central of the kernel to be $(x,y)$. Then we can consider using the concept of convolution to find a operator.
-The reason is that the convolution is defined as the elementwise product of the kernel and the image.</p>
-<p>the formula ($\nabla^2f$) of Laplacian filter we stated above can be written as:</p>
-<p>$$\begin{bmatrix}
-0 &amp; 1 &amp; 0\\
-1 &amp; -4 &amp; 1\\
-0 &amp; 1 &amp; 0\\
-\end{bmatrix}$$</p>
-<p>We can obtain the sharpened image $g(x,y)$ by adding the Laplacian of the image to the original image, which is:</p>
-<p>$$g(x,y)=f(x,y)-c[\nabla^2f(x,y)]$$</p>
-<h2 id="filter-with-first-order-derivative">Filter with first-order derivative</h2>
-<p>We define the gradient of an image $f$ as:</p>
+    <p>Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.</p>
+<h2 id="box-filter-kernels">Box Filter Kernels</h2>
+<p>This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all <code>1</code>&rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$). To create such a kernel in numpy, we can use the following code.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">averaging_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For example, a $3\times 3$ averaging filter will look like this:</p>
 <p>$$
-\nabla f = \text{grad}(f)=\begin{bmatrix}
-\frac{\partial f}{\partial x}\\
-\frac{\partial f}{\partial y}
+\begin{bmatrix}
+\frac{1}{9} &amp; \frac{1}{9} &amp;  \frac{1}{9} \\
+&amp; \\
+\frac{1}{9} &amp; \frac{1}{9} &amp;  \frac{1}{9} \\
+&amp; \\
+\frac{1}{9} &amp; \frac{1}{9} &amp;  \frac{1}{9} \\
 \end{bmatrix}
 $$</p>
-<p><em><strong>To be continued</strong></em></p>
+<p>The filter are suitable for quick experimentation. However, it is a poor approximation to blurring characteristics of lenses, also the filter only favor blurring along prependicular directions.</p>
+<p><img src="/blog/p/smoothing-spatial-filters/box_kernel.png"
+	width="1121"
+	height="774"
+	srcset="/blog/p/smoothing-spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_480x0_resize_box_3.png 480w, /blog/p/smoothing-spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Box filter kernel"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+></p>
+<h2 id="lowpass-gaussian-filter-kernels">Lowpass Gaussian Filter Kernels</h2>
+<p>Gaussian kernel is the only circularly symmetric kernels that are separable. It is in the following form.</p>
+<p>$$w(s,t) = G(s,t) = \frac{1}{2\pi\sigma}e^{-\frac{s^2+t^2}{2\sigma^2}}$$</p>
+<p>It is possible to derive arbitrary $n\times n$ Gaussian filter kernels for given $\sigma$, where $n$ is odd number.</p>
+<p>The center of the Gaussian filter $(x,y)$ must be 0. The following is a example of $3\times 3$ matrix for calculating Gaussian filter:</p>
+<p>$$
+\left[\begin{array}{ccc}
+(- 1, - 1) &amp; (0, - 1) &amp; (1, - 1)\\
+(- 1, 0) &amp; (0, 0) &amp;  (1, 0)\\
+(- 1, 1) &amp; (0, 1) &amp; (1, 1)\\
+\end{array}\right]
+$$</p>
+<p>Substitude the value of $x,y$ and $\sigma$ into the formula stated above, performing normalization, we can then get the Gaussian filter. In this case, for simplicity, if we let $\sigma=1$, then we have the kernel to be:</p>
+<p>$$
+\left[\begin{array}{ccc}
+(- 1, - 1) &amp; (0, - 1) &amp; (1, - 1)\\
+(- 1, 0) &amp; (0, 0) &amp;  (1, 0)\\
+(- 1, 1) &amp; (0, 1) &amp; (1, 1)\\
+\end{array}\right]
+$$</p>
+<p><img src="/blog/p/smoothing-spatial-filters/comparison.png"
+	width="1204"
+	height="610"
+	srcset="/blog/p/smoothing-spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_480x0_resize_box_3.png 480w, /blog/p/smoothing-spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Comparison between box filter kernel and Gaussian filter kernel"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="197"
+		data-flex-basis="473px"
+	
+></p>
+<h2 id="median-filter-kernel---non-linear-filter-kernel">Median Filter Kernel - Non-linear Filter Kernel</h2>
+<p>A non-linear filter will examine neighbours using various orderings, one of the most common one is order statistics. While a linear filter is a linear operation that its&rsquo; output can be expressed as the convolution of image with filter. Moreover, linear filters have corresponding frequency domain filter.</p>
+<p>Among the non-linear filter kernel, one of the most popular one is median filter. It examines the neighbourhood pixels, and find the median of the window. The filter kernel preserves edges, while removing impulse noise, and it avoids excessive smoothing.</p>
+<p><img src="/blog/p/smoothing-spatial-filters/image.png"
+	width="1212"
+	height="519"
+	srcset="/blog/p/smoothing-spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_480x0_resize_box_3.png 480w, /blog/p/smoothing-spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Noise reduction with Gaussian and median filter kernel"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="233"
+		data-flex-basis="560px"
+	
+></p>
 
 </section>
 
@@ -471,12 +506,12 @@ $$</p>
             
                 
 <article class="">
-    <a href="/blog/p/smoothing-spatial-filters/">
+    <a href="/blog/p/spatial-filters/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Smoothing (Lowpass) Spatial Filters</h2>
+            <h2 class="article-title">Sharpening (Highpass) Spatial Filters</h2>
         </div>
     </a>
 </article>

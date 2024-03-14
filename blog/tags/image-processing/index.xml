@@ -7,11 +7,60 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://smokingpuddle58.github.io/blog/tags/image-processing/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Smoothing (Lowpass) Spatial Filters</title>
+        <title>Sharpening (Highpass) Spatial Filters</title>
         <link>https://smokingpuddle58.github.io/blog/p/spatial-filters/</link>
         <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
         
         <guid>https://smokingpuddle58.github.io/blog/p/spatial-filters/</guid>
+        <description>&lt;h2 id=&#34;laplacian-operator&#34;&gt;Laplacian operator&lt;/h2&gt;
+&lt;p&gt;Note that the Laplacian operator is the simplest isotropic derivative kernel. For any image $f(x,y)$, it is defined as:&lt;/p&gt;
+&lt;p&gt;$$\nabla^2f=\frac{\partial f}{\partial x^2} + \frac{\partial f}{\partial y^2}$$&lt;/p&gt;
+&lt;p&gt;Since derivatives of any order are linear operation, thus Laplacian is also a linear operator.&lt;/p&gt;
+&lt;p&gt;If we define the derivatives as the following:&lt;/p&gt;
+&lt;p&gt;$$\frac{\partial f}{\partial x} = f (x + 1) - f (x)$$&lt;/p&gt;
+&lt;p&gt;Then it is not difficult to derive that:
+$$\frac{\partial^2 f}{\partial x^2} = f (x + 1) + f (x - 1) - 2 f (x)$$&lt;/p&gt;
+&lt;p&gt;Since:&lt;/p&gt;
+&lt;p&gt;$$\begin{array}{lll}
+\frac{\partial^2 f}{\partial x^2} &amp;amp; = &amp;amp; f (x + 1) - f (x) - (f (x) - f (x -
+1))\\\\
+&amp;amp; = &amp;amp; f (x + 1) + f (x - 1) - 2 f (x)
+\end{array}$$&lt;/p&gt;
+&lt;p&gt;We can then derive that:&lt;/p&gt;
+&lt;p&gt;$$\begin{cases}
+\frac{\partial^2 f}{\partial x^2} = f (x + 1, y) + f (x - 1, y) - 2 f (x,
+y)\\\\
+\frac{\partial^2 f}{\partial y^2} = f (x, y + 1) + f (x, y - 1) - 2 f (x, y)
+\end{cases}$$&lt;/p&gt;
+&lt;p&gt;Thus:&lt;/p&gt;
+&lt;p&gt;$$\nabla^2f=f (x + 1, y) + f (x - 1, y) +f (x, y + 1) + f (x, y - 1) - 4 f (x,y)$$&lt;/p&gt;
+&lt;p&gt;We let the central of the kernel to be $(x,y)$. Then we can consider using the concept of convolution to find a operator.
+The reason is that the convolution is defined as the elementwise product of the kernel and the image.&lt;/p&gt;
+&lt;p&gt;the formula ($\nabla^2f$) of Laplacian filter we stated above can be written as:&lt;/p&gt;
+&lt;p&gt;$$\begin{bmatrix}
+0 &amp;amp; 1 &amp;amp; 0\\
+1 &amp;amp; -4 &amp;amp; 1\\
+0 &amp;amp; 1 &amp;amp; 0\\
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;We can obtain the sharpened image $g(x,y)$ by adding the Laplacian of the image to the original image, which is:&lt;/p&gt;
+&lt;p&gt;$$g(x,y)=f(x,y)-c[\nabla^2f(x,y)]$$&lt;/p&gt;
+&lt;h2 id=&#34;filter-with-first-order-derivative&#34;&gt;Filter with first-order derivative&lt;/h2&gt;
+&lt;p&gt;We define the gradient of an image $f$ as:&lt;/p&gt;
+&lt;p&gt;$$
+\nabla f = \text{grad}(f)=\begin{bmatrix}
+\frac{\partial f}{\partial x}\\
+\frac{\partial f}{\partial y}
+\end{bmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;To be continued&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Smoothing (Lowpass) Spatial Filters</title>
+        <link>https://smokingpuddle58.github.io/blog/p/smoothing-spatial-filters/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://smokingpuddle58.github.io/blog/p/smoothing-spatial-filters/</guid>
         <description>&lt;p&gt;Smoothing spatial filters are used mainly for noise reduction, reduce aliasing and some irrelevant details in the image. There are different types of such filters, which will be introduced below.&lt;/p&gt;
 &lt;h2 id=&#34;box-filter-kernels&#34;&gt;Box Filter Kernels&lt;/h2&gt;
 &lt;p&gt;This is the most simple filter kernel. This filter can be created by creating an $m\times n$ array with all &lt;code&gt;1&lt;/code&gt;&amp;rsquo;s, then every element is divided by the sum of coefficients in the array (In this case, $\frac{1}{mn}$). To create such a kernel in numpy, we can use the following code.&lt;/p&gt;
@@ -34,10 +83,10 @@
 \end{bmatrix}
 $$&lt;/p&gt;
 &lt;p&gt;The filter are suitable for quick experimentation. However, it is a poor approximation to blurring characteristics of lenses, also the filter only favor blurring along prependicular directions.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/box_kernel.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/box_kernel.png&#34;
 	width=&#34;1121&#34;
 	height=&#34;774&#34;
-	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/box_kernel_hud04dbdc95800e05879827861ebc36909_487504_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Box filter kernel&#34;
@@ -68,10 +117,10 @@ $$&lt;/p&gt;
 (- 1, 1) &amp;amp; (0, 1) &amp;amp; (1, 1)\\
 \end{array}\right]
 $$&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/comparison.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/comparison.png&#34;
 	width=&#34;1204&#34;
 	height=&#34;610&#34;
-	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/comparison_hucab805a38fdf6e3b9293e4a64b48b2f3_113624_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Comparison between box filter kernel and Gaussian filter kernel&#34;
@@ -85,10 +134,10 @@ $$&lt;/p&gt;
 &lt;h2 id=&#34;median-filter-kernel---non-linear-filter-kernel&#34;&gt;Median Filter Kernel - Non-linear Filter Kernel&lt;/h2&gt;
 &lt;p&gt;A non-linear filter will examine neighbours using various orderings, one of the most common one is order statistics. While a linear filter is a linear operation that its&amp;rsquo; output can be expressed as the convolution of image with filter. Moreover, linear filters have corresponding frequency domain filter.&lt;/p&gt;
 &lt;p&gt;Among the non-linear filter kernel, one of the most popular one is median filter. It examines the neighbourhood pixels, and find the median of the window. The filter kernel preserves edges, while removing impulse noise, and it avoids excessive smoothing.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/image.png&#34;
 	width=&#34;1212&#34;
 	height=&#34;519&#34;
-	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_480x0_resize_box_3.png 480w, https://smokingpuddle58.github.io/blog/blog/p/smoothing-spatial-filters/image_huf2544c7af812acad5165ba8ead997164_650786_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Noise reduction with Gaussian and median filter kernel&#34;

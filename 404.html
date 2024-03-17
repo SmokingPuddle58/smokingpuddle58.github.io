@@ -28,12 +28,13 @@
 <main>
 <div id="navigation"></div>
     <div class="mainPage fofBody">
+        <div style="text-align:center;">
         <button class="menu_button"
-                style="margin: 0; position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); font-size: xxx-large; padding-left:30px;padding-right:30px; border-radius: 50px"
+                style="font-size: xxx-large; border-radius: 50px"
                 onclick="changeEmoji()" id="fourOhFour">
         </button>
-
-        <p style="text-align: center; font-size: xx-large;"><br><br>Page does not exist!</p>
+</div>
+        <p style="text-align: center; font-size: xx-large;">Page does not exist!</p>
         <p style="text-align: center; font-size: large">
             If there should be a page here, please contact SmokingPuddle58. Thanks.
         </p>
@@ -46,9 +47,9 @@
             </h3>
             <p>
             </p>
-            <button class="menu_button"
-                    style="margin: 0;   position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%);   transform: translate(-50%, -50%);"
-                    onclick="changeSentence()">
+            <div style="text-align:center;">
+
+            <button class="menu_button" onclick="changeSentence()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-replace icon_svg" width="16"
                      height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -61,13 +62,13 @@
                 Change a quote
             </button>
             <br>
-
+        </div>
         </div>
         <br><br><br>
-
+        <div style="text-align:center;">
         <a href=https://smokingpuddle58.github.io/#home>
             <button class="menu_button"
-                    style="margin: 0;   position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%);   transform: translate(-50%, -50%);">
+                    >
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home icon_svg"
                      width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -79,8 +80,10 @@
                 Back to home
             </button>
         </a>
-
-    </div>
+        <!--
+        style="margin: 0;   position: absolute; left: 50%;   -ms-transform: translate(-50%, -50%);   transform: translate(-50%, -50%);"
+        -->
+    </div></div>
     <div class="copyright_text footer">
         <a href="https://github.com/lukePeavey/quotable/blob/master/LICENCE.md">Quotes are licensed under the MIT
             License</a>

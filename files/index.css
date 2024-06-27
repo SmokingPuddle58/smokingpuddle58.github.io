@@ -28,7 +28,7 @@ body {
     box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
     box-sizing: border-box;
     left: 50%;
-    padding: 10vmin ;
+    padding: 10vmin;
     position: fixed;
     text-align: center;
     top: 50%;
@@ -40,6 +40,7 @@ body {
     0% {
         transform: translateX(-25%);
     }
+
     100% {
         transform: translateX(25%);
     }
@@ -79,10 +80,14 @@ body {
 }
 
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
     user-select: none;
 }
 
@@ -118,17 +123,34 @@ body {
 @media (max-width: 800px) {
     .box {
         position: fixed;
-        left:0;
-        right:0;
-        margin-left:auto;
-        margin-right:auto;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
         background-color: rgba(255, 255, 255, .8);
         box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
         box-sizing: border-box;
-        padding: 3vmin  ;
+        padding: 3vmin;
         text-align: center;
         top: 0;
         transform: none;
+    }
+
+    .button {
+        display: inline-table;
+        max-width: 200px;
+        padding: 3%;
+    }
+
+    .icon {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 0 px;
+        align-items: center;
+    }
+
+    .text {
+        padding: 10px;
     }
 }
 

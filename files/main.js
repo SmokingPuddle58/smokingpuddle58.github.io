@@ -46,9 +46,9 @@ function changeEmoji() {
 }
 
 async function changeSentence() {
-    let quote = await (await fetch("https://api.quotable.io/random")).json();
-    document.getElementById("sentence").textContent = quote.content;
-    document.getElementById("author").textContent = "-- " + quote.author;
+    let quote = await (await fetch("https://zenquotes.io/api/random")).json();
+    document.getElementById("q").textContent = quote.content;
+    document.getElementById("a").textContent = "-- " + quote.author;
     document.getElementById("quoteLicense").textContent = "Quote API licensed under MIT"
 }
 

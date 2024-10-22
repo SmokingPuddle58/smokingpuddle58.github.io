@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Changed the background, probably last commit for this branch." />
+    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Changed the background, probably last commit for this branch.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +67,7 @@
       <updated>1729500068948</updated>
       <workItem from="1729500070076" duration="1539000" />
       <workItem from="1729513979994" duration="11367000" />
-      <workItem from="1729567179162" duration="5047000" />
+      <workItem from="1729567179162" duration="5703000" />
     </task>
     <task id="LOCAL-00001" summary="fix: Changed a new API system for quote to ensure no SSL error.">
       <option name="closed" value="true" />

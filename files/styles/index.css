@@ -1,0 +1,70 @@
+body {
+    background-color: #272727;
+    background-size: cover;
+    position: relative;
+}
+
+@font-face {
+    font-family: "Jetbrain";
+    src: url(JetBrainsMono-Regular.woff2)
+}
+
+* {
+    font-family: "Jetbrain", serif;
+}
+
+/* The sidebar menu */
+.sidenav {
+    /*height: 100%;*/ /* Full-height: remove this if you want "auto" height */
+    width: 200px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    border-radius: 25px;
+    z-index: 1; /* Stay on top */
+    top: 20px; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.avatar_img {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    padding: 2px;
+    transition-duration: .2s
+}
+
+.avatar_img:hover {
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .65);
+    border: 4px solid #1e90ff;
+    transform: scale(1.05);
+}
+
+.sample {
+}

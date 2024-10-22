@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.1/css-doodle.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="files/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="files/image/avatar_small.png">
+    <script src="files/main.js"></script>
+    <title>SmokingPuddle58's Personal Site</title>
+</head>
+
+<body>
+    <!-- Modified from https://webdesign.tutsplus.com/how-to-draw-patterns-with-css-using-css-doodle--cms-33110t -->
+    <css-doodle grid="5" style="position: fixed; z-index: -1;" click-to-update>
+        :doodle
+        {
+            @grid: 20 / 100vmax;
+        }
+
+        :container {
+            gap: 40px;
+            transform: rotate(@rand(0, 360)deg) scale(1.75);
+        }
+
+        background: @pick(#29B6F6, #FDD835, #5E35B1, #FFCCBC, #E8EAF6, #B2DFDB, #1B5E20, "#2979FF");
+        opacity: @r(.95);
+
+        animation: test infinite @r(100s, 150s) linear;
+
+        @keyframes test {
+        0% {
+            transform: translate3d(0, 0, 0) rotate(@rand(-360, 360)deg);
+        }
+        50% {
+            transform: translate3d(@r(-2500%, 2500%), @r(-2500%, 2500%), 0) rotate(@rand(-360, 360)deg);
+        }
+        100% {
+            transform: translate3d(0, 0, 0) rotate(@rand(-360, 360)deg);
+        }
+    </css-doodle>
+
+    <div class="box noselect">
+        <div class="main_page" id="main">
+            <div>
+                <p style="text-align:center;"><img src="files/image/avatar_small.png" class="avatar_img"
+                        alt="The avatar of SmokingPuddle58">
+                </p>
+            </div>
+
+            <div>
+                SmokingPuddle58's
+                <br>
+                Webpage
+            </div>
+
+            <br><br>
+
+            <a href="#self_intro" class="button" onclick="toAbout()" style="max-width: 200px; !important">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                </span>
+                <span class="text">About</span>
+            </a>
+
+            <a href="" class="button" onclick="alert('Blog is not ready yet!')" style="max-width: 200px; !important">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-pencil" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M10 18l5 -5a1.414 1.414 0 0 0 -2 -2l-5 5v2h2z" />
+                    </svg>
+                </span>
+                <span class="text">Blog</span>
+            </a>
+
+            <a href="#contact" class="button" onclick="toContact()" style="max-width: 200px; !important">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-at" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                        <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28" />
+                    </svg>
+                </span>
+                <span class="text">Contact</span>
+            </a>
+        </div>
+
+        <div class="self_intro" id="self_intro">
+            <h1>About Me</h1>
+            <br><br>
+
+            Hi there! This is SmokingPuddle58, a year 3 student from HKUST, majoring in MATH(CS) + AI.
+            <br><br>
+            I am a Linux enjoyer. Currently, I am using Arch Linux as my main operating system.
+            <br><br>
+            I work best with Python btw! For more about my project, please go to <b>Project</b> subsection.
+            <br><br>
+            If you want to know more about my skills, please take a look at my Resume! 😝
+            <br><br>
+
+            Hi there! This is SmokingPuddle58, a year 3 student from HKUST, majoring in MATH(CS) + AI.
+            <br><br>
+            I am a Linux enjoyer. Currently, I am using Arch Linux as my main operating system.
+            <br><br>
+            I work best with Python btw! For more about my project, please go to <b>Project</b> subsection.
+            <br><br>
+            If you want to know more about my skills, please take a look at my Resume! 😝
+            <br><br>
+            Hi there! This is SmokingPuddle58, a year 3 student from HKUST, majoring in MATH(CS) + AI.
+            <br><br>
+            I am a Linux enjoyer. Currently, I am using Arch Linux as my main operating system.
+            <br><br>
+            I work best with Python btw! For more about my project, please go to <b>Project</b> subsection.
+            <br><br>
+            If you want to know more about my skills, please take a look at my Resume! 😝
+            <br><br>
+
+            <a href="/files/resume_sp58.pdf" class="button">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                    </svg>
+                </span>
+                <span class="text">Resume</span>
+            </a>
+
+            <a href="#project" class="button" onclick="toProjectFromAbout()">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list-details" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M13 5h8" />
+                        <path d="M13 9h5" />
+                        <path d="M13 15h8" />
+                        <path d="M13 19h5" />
+                        <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                    </svg>
+                </span>
+                <span class="text">Project</span>
+            </a>
+
+            <a href="#hobby" class="button" onclick="toHobbyFromAbout()">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple-arcade"
+                        width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path
+                            d="M20 12.5v4.75a.734 .734 0 0 1 -.055 .325a.704 .704 0 0 1 -.348 .366l-5.462 2.58a5 5 0 0 1 -4.27 0l-5.462 -2.58a.705 .705 0 0 1 -.401 -.691l0 -4.75" />
+                        <path
+                            d="M4.431 12.216l5.634 -2.332a5.065 5.065 0 0 1 3.87 0l5.634 2.332a.692 .692 0 0 1 .028 1.269l-5.462 2.543a5.064 5.064 0 0 1 -4.27 0l-5.462 -2.543a.691 .691 0 0 1 .028 -1.27z" />
+                        <path d="M12 7l0 6" />
+                    </svg>
+                </span>
+                <span class="text">Hobby</span>
+            </a>
+
+            <br><br>
+
+            <a href="#" class="button" onclick="toMain()">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M5 12l6 6" />
+                        <path d="M5 12l6 -6" />
+                    </svg>
+                </span>
+                <span class="text">Back</span>
+            </a>
+        </div>
+
+        <div class="hobby" id="hobby">
+            I am currently a beginner in rhythm games. I am practcing maimai and chunithm.
+            <br><br>
+            I also loves hiking (sometimes, to HKUST). Hiking is one of the fastest way (Probably) for going to HKUST
+            from Po Lam. If I don't need to go to UST that early, I will walk from Po Lam to UST.
+            The trip is fun and also fast, although a bit tiring. 🫠
+            <br><br>
+            <a href="#main" class="button" onclick="FromHobbyToAbout()">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M5 12l6 6" />
+                        <path d="M5 12l6 -6" />
+                    </svg>
+                </span>
+                <span class="text">Back</span>
+            </a>
+        </div>
+
+        <div class="project" id="project">
+            Here are some projects that I have done before:
+            <br><br>
+            <div class="projectBox">
+                Search Engine (COMP4321 Project)
+                <br><br>
+                A group project for COMP4321 made by me and two other groupmates
+                <br><br>
+                <a href="https://github.com/hvgupta/COMP4321_searchEngine_Group1" class="button">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                            <path d="M11 13l9 -9" />
+                            <path d="M15 4h5v5" />
+                        </svg>
+                    </span>
+                    <span class="text">Source Code</span>
+                </a>
+            </div>
+            <br>
+            <div class="projectBox">
+                Personal Webpage <b>NEW</b>
+                <br><br>
+                My website, as a practice to basic web design. Also for hosting some codes and notes.
+                <br><br>
+                <a href="https://github.com/smokingpuddle58/smokingpuddle58.github.io/" class="button">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                            <path d="M11 13l9 -9" />
+                            <path d="M15 4h5v5" />
+                        </svg>
+                    </span>
+                    <span class="text">Source Code</span>
+                </a>
+            </div>
+            <br>
+            <a href="#main" class="button" onclick="backToAboutFromProject()">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M5 12l6 6" />
+                        <path d="M5 12l6 -6" />
+                    </svg>
+                </span>
+                <span class="text">Back</span>
+            </a>
+        </div>
+
+        <div class="contact" id="contact">
+            <h1>Contacts</h1>
+            <br>
+            <a href="#" class="button" onclick="getEmailAddress()" id="email-button">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
+                        <path d="M3 6l9 6l9 -6" />
+                        <path d="M15 18h6" />
+                        <path d="M18 15l3 3l-3 3" />
+                    </svg>
+                </span>
+                <span class="text">Email</span>
+            </a>
+
+            <a href="https://discordapp.com/users/679305272195285012" class="button" id="discord" target="_blank">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-discord"
+                        width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                        <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                        <path
+                            d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" />
+                        <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+                    </svg>
+                </span>
+                <span class="text">Discord</span>
+            </a>
+
+            <a href="https://www.instagram.com/janjan0414" class="button" id="instagram" target="_blank">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram"
+                        width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        <path d="M16.5 7.5l0 .01" />
+                    </svg>
+                </span>
+                <span class="text">Instagram</span>
+            </a>
+
+            <a href="https://x.com/SmokingPuddle58" class="button" id="twitter" target="_blank">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter"
+                        width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z" />
+                    </svg>
+                </span>
+                <span class="text">Twitter</span>
+            </a>
+
+            <a href="https://www.github.com/smokingpuddle58" class="button" id="github" target="_blank">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                    </svg>
+                </span>
+                <span class="text">Github</span>
+            </a>
+
+            <br><br><br>
+
+            <a href="#main" class="button" onclick="toMain()">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                        height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M5 12l6 6" />
+                        <path d="M5 12l6 -6" />
+                    </svg>
+                </span>
+                <span class="text">Back</span>
+            </a>
+
+        </div>
+    </div>
+</body>
+
+</html>

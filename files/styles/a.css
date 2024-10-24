@@ -1,0 +1,99 @@
+body {
+    background-color: #272727;
+    text-align: center;
+}
+
+@font-face {
+    font-family: "Jetbrain";
+    src: url(JetBrainsMono-Regular.woff2)
+}
+
+* {
+    font-family: "Jetbrain", serif;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.content {
+    min-width: 30vw;
+    max-width: 50vw;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 1em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    padding: 15px;
+}
+
+.button {
+    background-color: #3c3c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 60px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    width: auto;
+    max-width: 200px;
+    -webkit-transition: max-width 0.5s;
+    transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5px;
+    opacity: 1;
+}
+
+.button:hover {
+    opacity: 1;
+    background-color: #1e90ff;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+.avatar_img {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    padding: 2px;
+    transition-duration: .2s
+}
+
+.avatar_img:hover {
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .65);
+    border: 4px solid #1e90ff;
+    transform: scale(1.02);
+}
+
+@media (max-width: 800px) {
+    .content {
+        max-width: 75vw;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}

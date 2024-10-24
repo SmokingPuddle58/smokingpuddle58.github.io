@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Slightly modified">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/a.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/a.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,19 +38,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "new__page",
-    "last_opened_file_path": "/home/smokingpuddle58/Documents/GitHub/busApp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new__page&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/smokingpuddle58/Documents/GitHub/busApp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,7 +69,10 @@
       <workItem from="1729500070076" duration="1539000" />
       <workItem from="1729513979994" duration="11367000" />
       <workItem from="1729567179162" duration="5703000" />
-      <workItem from="1729613448529" duration="610000" />
+      <workItem from="1729613448529" duration="1834000" />
+      <workItem from="1729668284533" duration="18000" />
+      <workItem from="1729763373246" duration="398000" />
+      <workItem from="1729773285869" duration="9356000" />
     </task>
     <task id="LOCAL-00001" summary="fix: Changed a new API system for quote to ensure no SSL error.">
       <option name="closed" value="true" />
@@ -93,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729613489320</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: Slightly modified">
+      <option name="closed" value="true" />
+      <created>1729614328246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729614328246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

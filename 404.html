@@ -1,97 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.1/css-doodle.min.js"></script>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="files/index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="files/image/avatar_small.png">
-    <script src="files/main.js"></script>
-    <title>SmokingPuddle58's Test Site</title>
-</head>
-
-<body>
-<!-- Design from https://webdesign.tutsplus.com/how-to-draw-patterns-with-css-using-css-doodle--cms-33110t -->
-<css-doodle grid="5" style="position: fixed; z-index: -1;">
-    :doodle {
-    @grid: 10 / 100vmax;
+<link rel="stylesheet" href="files/styles/a.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.1/css-doodle.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="files/image/avatar_small.png">
+<script src="files/scripts/main_1.js"></script>
+<css-doodle grid="5" style="position: fixed; z-index: -1;" click-to-update>
+    :doodle
+    {
+    @grid: 20 / 100vmax;
     }
-    background: @pick(#29B6F6, #FDD835, #5E35B1, #FFCCBC, #E8EAF6, #B2DFDB, #1B5E20, #2979FF);
-    opacity: @r(.9);
-    clip-path: polygon(
-    @rand(50%) 0, 50% @rand(70%), 0 @rand(100%)
-    );
+
+    :container {
+    transform: rotate(@rand(0, 360)deg) scale(1.75);
+    }
+
+    background: @pick(#29B6F6, #FDD835, #5E35B1, #FFCCBC, #E8EAF6, #B2DFDB, #1B5E20, "#2979FF");
+    opacity: @r(.95);
 
     animation: test infinite @r(100s, 150s) linear;
 
     @keyframes test {
     0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) ;
     }
     50% {
-    transform: translate3d(@r(-500%, 1000%), @r(-500%, 1000%), 0);
+    transform: translate3d(@r(-2500%, 2500%), @r(-2500%, 2500%), 0) rotate(@rand(-5, 5)deg);
     }
     100% {
-    transform: translate3d(0, 0, 0);
-    }
+    transform: translate3d(0, 0, 0) rotate(@rand(-5, 5)deg);
     }
 </css-doodle>
-<div class="box noselect">
-    <div>
-        <h1 style="font-size: xxx-large;" class="small_box" id="fourOhFour" onclick="changeEmoji()" >無</h1>
-        <br><br>
-        Nothing here.
-        <br><br>
-        <p id="sentence"></p>
-        <p id="author" style="float: right;"></p>
-        <br><br>
-        <br><br>
 
+
+<div class="container">
+    <div class="main_page content noselect">
+        <div>
+            <h1 style="font-size: xxx-large;" class="small_box" id="fourOhFour" onclick="changeEmoji()" >無</h1>
+            <br><br>
+            Nothing here.
+            <br><br>
+            <br><br>
+            <a href="index.html" class="button">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                             height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none" stroke-linecap="round"
+                             stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <path d="M5 12l14 0"/>
+                          <path d="M5 12l6 6"/>
+                          <path d="M5 12l6 -6"/>
+                        </svg>
+                    </span>
+                <span class="text">Back</span>
+            </a>
+
+        </div>
     </div>
-    <div class="main_page" id="main">
-        <a class="button" onclick="changeSentence()">
-        <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-quote" width="16" height="16"
-                 viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none" stroke-linecap="round"
-                 stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"/>
-              <path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"/>
-            </svg>
-        </span>
-            <span class="text">New Quote</span>
-        </a>
 
-        <a class="button" onclick="stopSentence()">
-        <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-quote-off" width="16"
-                 height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none" stroke-linecap="round"
-                 stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1m4 4v3c0 2.667 -1.333 4.333 -4 5"/>
-              <path d="M19 11h-4m-1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 .66 -.082 1.26 -.245 1.798m-1.653 2.29c-.571 .4 -1.272 .704 -2.102 .912"/>
-              <path d="M3 3l18 18"/>
-            </svg>
-        </span>
-            <span class="text">Quote Off</span>
-        </a>
-
-        <a href="index.html" class="button" onclick="toMain()">
-        <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
-                 height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none" stroke-linecap="round"
-                 stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M5 12l14 0"/>
-              <path d="M5 12l6 6"/>
-              <path d="M5 12l6 -6"/>
-            </svg>
-        </span>
-            <span class="text">Back</span>
-        </a>
-        <br><br>
-        <a href="https://github.com/lukePeavey/quotable?tab=MIT-1-ov-file#readme" id="quoteLicense"></a>
-    </div>
 </div>
-</body>
-</html>

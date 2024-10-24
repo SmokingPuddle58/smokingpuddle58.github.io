@@ -23,11 +23,16 @@ body {
 .box {
     background-color: rgba(255, 255, 255, .8);
     border-radius: .25em;
-    height: 100%;
     box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
-    box-sizing: border-box;
-    padding: 10vmin;
     text-align: center;
+    max-width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 0; left: 0;
+    transform: translate(calc(100vw - 100%), calc(100vh - 50%));
+    overflow-y:auto;
+    height: 100%
 }
 
 
@@ -106,7 +111,6 @@ body {
 
 @media (max-width: 800px) {
     .box {
-        position: fixed;
         left: 0;
         right: 0;
         margin-left: auto;
@@ -118,6 +122,7 @@ body {
         text-align: center;
         top: 0;
         transform: none;
+        min-height: 100vh;
     }
 
     .button {
@@ -129,7 +134,7 @@ body {
     .icon {
         margin-left: auto;
         margin-right: auto;
-        padding: 0 0 px;
+        padding: 0 0px;
         align-items: center;
     }
 

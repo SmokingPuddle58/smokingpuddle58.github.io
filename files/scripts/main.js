@@ -6,10 +6,11 @@ function togglePage(oldPage, newPage) {
 function copyEmail() {
     navigator.clipboard.writeText(atob(atob(atob("WVcxR2RXVnRhR2hpYldOM1RrUkZNRkZIT1RGa1IzaDJZakp6ZFZreU9YUT0="))));
     document.getElementById('email_name').textContent = 'Copied!'
+    document.getElementById('email-button').classList.add('copy');
     setTimeout(function() {
         document.getElementById('email_name').textContent = 'Emаil'
+        document.getElementById('email-button').classList.remove('copy');
     }, 2000);
-
 }
 
 function changeEmoji() {

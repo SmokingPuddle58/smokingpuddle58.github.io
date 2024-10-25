@@ -5,6 +5,7 @@ function togglePage(oldPage, newPage) {
 
 function copyEmail() {
     navigator.clipboard.writeText(atob(atob(atob("WVcxR2RXVnRhR2hpYldOM1RrUkZNRkZIT1RGa1IzaDJZakp6ZFZreU9YUT0="))));
+    document.getElementById('email_name').textContent = 'Copied!'
 }
 
 function changeEmoji() {

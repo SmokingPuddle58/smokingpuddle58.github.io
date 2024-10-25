@@ -50,11 +50,13 @@ html,body {
     transition: 0.2s;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     padding: 5px;
-    opacity: 1;
+}
+
+.button.copy, .button:hover.copy {
+    background-color: #3bb100;
 }
 
 .button:hover {
-    opacity: 1;
     background-color: #1e90ff;
 }
 
@@ -81,10 +83,10 @@ html,body {
     transform: scale(1.02);
 }
 
-@media (max-width: 800px) {
-    .content {
-        max-width: 75vw;
-    }
+.image_hobbies {
+    border-radius: 1em;
+    border:2px solid coral;
+    max-width: 25vw
 }
 
 .noselect {
@@ -98,3 +100,14 @@ html,body {
     /* Internet Explorer/Edge */
     user-select: none;
 }
+
+@media (max-width: 800px) {
+    .content {
+        max-width: 75vw;
+    }
+    .image_hobbies {
+        max-width: 65vw;
+    }
+}
+
+

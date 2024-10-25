@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="files/styles/a.css">
+<link rel="stylesheet" href="files/styles/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.1/css-doodle.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="files/image/avatar_small.png">
-<script src="files/scripts/main_1.js"></script>
+<script src="files/scripts/main.js"></script>
 <css-doodle grid="5" style="position: fixed; z-index: -1;" click-to-update>
     :doodle
     {
@@ -124,7 +124,7 @@
             If you want to know more about my skills, take a look at my Resume! 😝
             <br><br>
 
-            <a href="/files/resume_sp58.pdf" class="button">
+            <a href="/files/documents/resume_sp58.pdf" class="button">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file" width="16"
                          height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
@@ -137,8 +137,7 @@
                 <span class="text">Resume</span>
             </a>
 
-            <!--
-            <a href="#project" class="button" onclick="toProjectFromAbout()">
+            <a href="#project" class="button" onclick="togglePage('self_intro', 'project')">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list-details" width="16"
                          height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
@@ -154,9 +153,10 @@
                 </span>
                 <span class="text">Project</span>
             </a>
-            --->
-            <!--
-            <a href="#hobby" class="button" onclick="toHobbyFromAbout()">
+
+
+
+            <a href="#hobby" class="button" onclick="togglePage('self_intro', 'hobby')">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple-arcade"
                          width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
@@ -172,10 +172,90 @@
                 </span>
                 <span class="text">Hobby</span>
             </a>
-            -->
+
             <br><br>
 
             <a href="#" class="button" onclick="togglePage('self_intro', 'main')">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                         height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M5 12l6 6" />
+                        <path d="M5 12l6 -6" />
+                    </svg>
+                </span>
+                <span class="text">Back</span>
+            </a>
+        </div>
+
+        <div class="project" id="project" style="display: none">
+            Here are some projects that I have done before:
+            <br><br>
+            <div class="content">
+                Search Engine (COMP4321 Project)
+                <br><br>
+                A group project for COMP4321 made by me and two other groupmates
+                <br><br>
+                <a href="https://github.com/hvgupta/COMP4321_searchEngine_Group1" class="button">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link"
+                             width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                            <path d="M11 13l9 -9" />
+                            <path d="M15 4h5v5" />
+                        </svg>
+                    </span>
+                    <span class="text">Source Code</span>
+                </a>
+            </div>
+            <br>
+            <div class="content">
+                Personal Webpage <b>NEW</b>
+                <br><br>
+                My website, as a practice to basic web design. Also for hosting some codes and notes.
+                <br><br>
+                <a href="https://github.com/smokingpuddle58/smokingpuddle58.github.io/" class="button">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link"
+                             width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                            <path d="M11 13l9 -9" />
+                            <path d="M15 4h5v5" />
+                        </svg>
+                    </span>
+                    <span class="text">Source Code</span>
+                </a>
+            </div>
+            <br>
+            <a href="#main" class="button" onclick="togglePage('project','self_intro')">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
+                         height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M5 12l6 6" />
+                        <path d="M5 12l6 -6" />
+                    </svg>
+                </span>
+                <span class="text">Back</span>
+            </a>
+        </div>
+
+        <div class="hobby" id="hobby" style="display: none">
+            I am a rhythm game lover, who loves to play Maimai and Chunithm, although I am still a beginner.
+            <br><br>
+            I also loves hiking (sometimes, to HKUST). Hiking is one of the fastest way (Probably) for going to HKUST
+            from Po Lam. If I don't need to go to UST that early, I will walk from Po Lam to UST.
+            The trip is fun and also fast, although a bit tiring. 🫠
+            <br><br>
+            <a href="#main" class="button" onclick="togglePage('hobby', 'self_intro')">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="16"
                          height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none"
@@ -284,9 +364,8 @@
             </a>
 
         </div>
-
     </div>
 
 </div>
 
-<script src="files/scripts/main_1.js"></script>
+<script src="files/scripts/main.js"></script>

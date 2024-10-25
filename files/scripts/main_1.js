@@ -11,3 +11,4 @@ function changeEmoji() {
     const fourOhFourArray = ['冇', '沒', '無', '空', '虛'];
     document.getElementById("fourOhFour").textContent = fourOhFourArray[Math.floor(Math.random() * fourOhFourArray.length)];
 }
+

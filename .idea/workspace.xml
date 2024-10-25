@@ -4,16 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Slightly modified">
+    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Modified page to new version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/a.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/a.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/image/Screenshot 2024-08-23 102409.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/resume_sp58.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/files/documents/resume_sp58.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/files/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/scripts/main_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/styles/a.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/styles/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/index_2.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,6 +64,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files/documents" />
+      <recent name="$PROJECT_DIR$/files/image" />
+      <recent name="$PROJECT_DIR$/temp" />
+      <recent name="$PROJECT_DIR$/files/styles" />
+      <recent name="$PROJECT_DIR$/files/scripts" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -72,7 +94,8 @@
       <workItem from="1729613448529" duration="1834000" />
       <workItem from="1729668284533" duration="18000" />
       <workItem from="1729763373246" duration="398000" />
-      <workItem from="1729773285869" duration="9356000" />
+      <workItem from="1729773285869" duration="12358000" />
+      <workItem from="1729829825948" duration="6925000" />
     </task>
     <task id="LOCAL-00001" summary="fix: Changed a new API system for quote to ensure no SSL error.">
       <option name="closed" value="true" />
@@ -106,7 +129,39 @@
       <option name="project" value="LOCAL" />
       <updated>1729614328246</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Modified page to new version">
+      <option name="closed" value="true" />
+      <created>1729790459607</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729790459607</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: Modified page to new version">
+      <option name="closed" value="true" />
+      <created>1729790806512</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729790806512</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: Modified page to new version">
+      <option name="closed" value="true" />
+      <created>1729823051699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729823051699</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: Modified page to new version">
+      <option name="closed" value="true" />
+      <created>1729824019913</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729824019913</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +209,7 @@
     <MESSAGE value="fix: Changed a new API system for quote to ensure no SSL error." />
     <MESSAGE value="feat: Changed the background, probably last commit for this branch." />
     <MESSAGE value="feat: Slightly modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Slightly modified" />
+    <MESSAGE value="feat: Modified page to new version" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Modified page to new version" />
   </component>
 </project>

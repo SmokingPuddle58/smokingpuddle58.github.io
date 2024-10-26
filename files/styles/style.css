@@ -23,6 +23,7 @@ html,body {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, .8);
+    transition-duration: .2s
 }
 
 .content {
@@ -30,8 +31,10 @@ html,body {
     max-width: 50vw;
     background-color: rgba(255, 255, 255, .7);
     border-radius: 1em;
-    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .25);
     padding: 15px;
+    border: 3px solid transparent;
+    transition-duration: .2s
 }
 
 .button {
@@ -40,6 +43,7 @@ html,body {
     color: white;
     text-decoration: none;
     border-radius: 60px;
+    border: 2px solid transparent;
     height: 32px;
     display: inline-flex;
     align-items: center;
@@ -84,23 +88,20 @@ html,body {
 }
 
 .image_hobbies {
-    border-radius: 1em;
+    border-radius: .5em;
     border:2px solid coral;
     max-width: 25vw
 }
 
 .noselect {
     -webkit-touch-callout: none;
-    /* iOS Safari */
     -webkit-user-select: none;
-    /* Safari */
     -moz-user-select: none;
-    /* Old versions of Firefox */
     -ms-user-select: none;
-    /* Internet Explorer/Edge */
     user-select: none;
 }
 
+/* Responsive Design Configs */
 @media (max-width: 800px) {
     .content {
         max-width: 75vw;
@@ -110,4 +111,33 @@ html,body {
     }
 }
 
+/* Dark Mode Configs */
+.dark-mode .content {
+    background-color: rgba(0, 0, 0, .7);
+    color: #999999;
+    border: 3px solid orangered;
+}
 
+.dark-mode .container {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.dark-mode .icon-tabler-sun {
+    display: none;
+    transition-duration: .5s;
+}
+
+.dark-mode .icon-tabler-moon {
+    display: block;
+    transition-duration: .5s;
+}
+
+.icon-tabler-sun {
+    display: block;
+    transition-duration: .5s;
+}
+
+ .icon-tabler-moon {
+    display: none;
+    transition-duration: .5s;
+}

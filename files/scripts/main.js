@@ -1,6 +1,6 @@
 function togglePage(oldPage, newPage) {
-    document.getElementById(oldPage).style.display = "none";
     document.getElementById(newPage).style.display = "block";
+    document.getElementById(oldPage).style.display = "none";
 }
 
 function copyEmail() {
@@ -18,3 +18,7 @@ function changeEmoji() {
     document.getElementById("fourOhFour").textContent = fourOhFourArray[Math.floor(Math.random() * fourOhFourArray.length)];
 }
 
+function toggleDark() {
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+}

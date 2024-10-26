@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Added dark mode">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/styles/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="bug fix: Make script link, css link and icon link directly link to webpage" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +92,7 @@
       <workItem from="1729950524610" duration="1302000" />
       <workItem from="1729958948495" duration="553000" />
       <workItem from="1729959716147" duration="1382000" />
+      <workItem from="1729962481987" duration="231000" />
     </task>
     <task id="LOCAL-00001" summary="fix: Changed a new API system for quote to ensure no SSL error.">
       <option name="closed" value="true" />
@@ -176,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729951817123</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="bug fix: Make script link, css link and icon link directly link to webpage">
+      <option name="closed" value="true" />
+      <created>1729962705270</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729962705270</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +232,7 @@
     <MESSAGE value="feat: Slightly modified" />
     <MESSAGE value="feat: Modified page to new version" />
     <MESSAGE value="feat: Added dark mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added dark mode" />
+    <MESSAGE value="bug fix: Make script link, css link and icon link directly link to webpage" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix: Make script link, css link and icon link directly link to webpage" />
   </component>
 </project>

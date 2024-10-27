@@ -137,7 +137,15 @@ html,body {
     transition-duration: .5s;
 }
 
- .icon-tabler-moon {
+.icon-tabler-moon {
     display: none;
     transition-duration: .5s;
+}
+
+section {
+    display: none
+}
+
+section:target {
+    display: block
 }

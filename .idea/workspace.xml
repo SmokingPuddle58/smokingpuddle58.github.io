@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="bug fix: Fixed &quot;Back&quot; button in 404 page that it can correctly point back to index page.">
+    <list default="true" id="ccd35f4f-7652-4ac2-9f6d-5ea2568e778f" name="Changes" comment="feat: Save the dark mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/files/scripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,7 @@
       <workItem from="1729959716147" duration="1382000" />
       <workItem from="1729962481987" duration="231000" />
       <workItem from="1729962747400" duration="277000" />
-      <workItem from="1729963757810" duration="942000" />
+      <workItem from="1729963757810" duration="2080000" />
     </task>
     <task id="LOCAL-00001" summary="fix: Changed a new API system for quote to ensure no SSL error.">
       <option name="closed" value="true" />
@@ -196,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729962801329</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: Save the dark mode">
+      <option name="closed" value="true" />
+      <created>1729964856463</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729964856463</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +254,7 @@
     <MESSAGE value="feat: Added dark mode" />
     <MESSAGE value="bug fix: Make script link, css link and icon link directly link to webpage" />
     <MESSAGE value="bug fix: Fixed &quot;Back&quot; button in 404 page that it can correctly point back to index page." />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix: Fixed &quot;Back&quot; button in 404 page that it can correctly point back to index page." />
+    <MESSAGE value="feat: Save the dark mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Save the dark mode" />
   </component>
 </project>
